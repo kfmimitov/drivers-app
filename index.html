@@ -5,13 +5,15 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 
     <link href="bower_components/ionic/release/css/ionic.css" rel="stylesheet">
+    <link href="styles/main.css" rel="stylesheet">
 
+    <script src="cordova.js"></script>
     <script src="bower_components/angular/angular.min.js"></script>
     <script src="bower_components/angular-route/angular-route.min.js"></script>
     <script src="bower_components/everlive/min/everlive.all.min.js"></script>
     <script src="js/angular-locale_bg-bg.js"></script>
-    
-    <script src="bower_components/ionic/release/js/ionic.bundle.js"></script>  
+
+    <script src="bower_components/ionic/release/js/ionic.bundle.js"></script>
 
     <script src="scripts/app.js"></script>
     <script src="scripts/DriversService.js"></script>
@@ -22,30 +24,36 @@
 </head>
 <body class="homepage" ng-controller="MainController">
 
-    <ion-side-menus>
+    <ion-header-bar class="bar-assertive">
+  <h1 class="title">Rednecks</h1>
+</ion-header-bar>
 
-<ion-side-menu-content>
-  <ion-header-bar class="bar-dark">
-    <h1 class="title">Todo</h1>
-  </ion-header-bar>
-  <ion-content>
-    <!-- our list and list items -->
-    <ion-list>
-      <ion-item ng-repeat="task in tasks">
-        {{task.title}}
-      </ion-item>
-    </ion-list>
-  </ion-content>
-</ion-side-menu-content>
+    <ion-tabs class="tabs-assertive tabs-icon">
 
-    <!-- Left menu -->
-    <ion-side-menu side="left">
-      <ion-header-bar class="bar-dark">
-        <h1 class="title">Projects</h1>
-      </ion-header-bar>
-    </ion-side-menu>
+  <ion-tab title="Home" icon-on="ion-ios7-filing" icon-off="ion-ios7-filing-outline">
+     
+      <div class="homeOne">
+          <label>Снимай и покажи всеки селянин на пътя!</label>
+      </div>
+      <div class="homeTwo">
+          <label>"Няма нищо по-опасно от глупака, който се опитва да играе ролята на умен." Йохан Гьоте</label>
+      </div>
+      <div class="homeThree">
+          <button class="button button-light" id="CameraButton" ng-click="onCameraClick()">
+                    Направи Снимка
+                </button>
+      </div>   
+  </ion-tab>
 
-  </ion-side-menus>
+  <ion-tab title="Начало" icon-on="ion-ios7-clock" icon-off="ion-ios7-clock-outline">
+    <!-- Tab 2 content -->
+  </ion-tab>
+
+  <ion-tab title="Settings" icon-on="ion-ios7-gear" icon-off="ion-ios7-gear-outline">
+    <!-- Tab 3 content -->
+  </ion-tab>
+
+</ion-tabs>
 
 </body>
 </html>

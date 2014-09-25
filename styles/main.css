@@ -1,0 +1,53 @@
+@charset 'UTF-8';
+@import url("font-awesome.min.css");
+@import url("http://fonts.googleapis.com/css?family=Open+Sans:400italic,300,700,400,600&subset=latin,cyrillic-ext");
+
+
+body, textarea, select {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    color: #52575c;
+    line-height: 1.75em;
+    font-size: 15pt;
+}
+
+input {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    color: #52575c;
+    line-height: 1.75em;
+    font-size: 14pt;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 300;
+    color: #52575c;
+}
+
+.homeOne {
+    height: 150px;
+    width: auto;
+    padding: 3em 0 0 1.1em;
+}
+
+.homeOne label {
+   font-size: 26px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.homeTwo {
+    width: auto;
+    height: 170px;
+    padding: 1em 1em 1em 1.5em;
+}
+
+.homeTwo label {
+    font-style: italic;
+    font-size: 18px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.homeThree {
+    height: 120px;
+    text-align: center;
+}

@@ -497,6 +497,9 @@
     <Content Include="cordova.android.js" />
     <Content Include="cordova.ios.js" />
     <Content Include="cordova.wp8.js" />
+    <Content Include="css\font-awesome.min.css">
+      <SubType>Content</SubType>
+    </Content>
     <Content Include="images\notFound.png" />
     <Content Include="index.html" />
     <Content Include="scripts\app.js" />
