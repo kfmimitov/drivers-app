@@ -1,0 +1,17 @@
+﻿<div class="wrapper" ng-controller="DriversController">
+    <section class="container">
+        <header class="major">
+            <h2>Последно добавените селяни</h2>
+        </header>
+
+        <div class="image-wrapper" ng-repeat="driver in latestDrivers">
+            <h4>"{{driver.Title}}"</h4>
+            <span>{{driver.CreatedAt  | date:'mediumDate' }}</span>
+            <br />
+            <span>{{driver.LicensePlate }}</span>
+            <a class="image featured">
+                <img ng-src="{{driver.Picture}}" alt="{{driver.LicensePlate}} image" />
+            </a>
+        </div>
+    </section>
+</div>

@@ -1,0 +1,61 @@
+﻿<div>
+    <div id="focus">
+        <div class="wrapper" id="driverNotFound" ng-hide="isFound">
+            <section class="container">
+                <header class="major">
+                    <h2>{{licensePlate}} не е намерен. Добави го като част от селото...</h2>
+                </header>
+                <div class="redneckNotFound">
+                    <img ng-src="/images/notFound.png" alt="Няма намерен шофьор с тази регистрация" />
+                </div>
+            </section>
+        </div>
+
+        <div class="wrapper" id="driverResult" ng-show="isFound">
+            <section class="container">
+                <header class="major">
+                    <h2>Ооо, да и още как, {{newDriver.LicensePlate}} е вече част от селото!</h2>
+                </header>
+
+                <div class="redneck" ng-repeat="driver in drivers">
+                    <h4>{{driver.Title}}</h4>
+                    <span>{{driver.CreatedAt  | date:'mediumDate' }}</span>
+                    <img ng-src="{{driver.Picture}}" alt="{{driver.LicensePlate}} image" />
+                </div>
+            </section>
+        </div>
+    </div>
+    <!-- Uploading photos of an existing user -->
+    <div id="uploadPhotos">
+        <div id="uploadContainer" class="container">
+            <header>
+                <div ng-if="isFound == true">
+                    <h2>Качи още снимки на {{newDriver.LicensePlate}}!</h2>
+                </div>
+                <div ng-if="isFound == false">
+                    <h2>Добави снимка и коментар за шофьорските "умения" на {{licensePlate}}!</h2>
+                </div>
+
+            </header>
+            <div>
+                <div ng-repeat="file in selectedFiles">
+                    {{file.name}}
+                </div>
+                <form name="NewDriver" method="post" ng-submit="onNewDriverSubmit(newDriver)" enctype="multipart/form-data">
+                    <div>
+                        <small class="error"
+                            ng-show="NewDriver.title.$error.maxlength">Описанието трябва да е по-кратко от 100 знака.
+                        </small>
+                    </div>
+                    <input lang="bg" name="title" type="text" ng-minlength="3" ng-maxlength="100" required
+                        ng-model="newDriver.Title" placeholder="Описание от максимум 100 знака. Бъди креативен :)" />
+                    <input name="files" type="file" k-localization="{select : 'Избери файл',headerStatusUploading : 'Прикачване...',headerStatusUploaded : 'Готово'}" k-async="{ saveUrl: 'http://api.everlive.com/V1/EgXwDq7GEgueXESK/Files', autoUpload: true }" kendo-upload k-success="onUploadCompleted" k-multiple="false" />
+                    <ul class="actions">
+                        <li>
+                            <input class="sendButton" type="submit" value="Изпрати" /></li>
+                    </ul>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,51 @@
+﻿<!DOCTYPE HTML>
+<html ng-app="Rednecks">
+<head>
+    <title>Rednecks</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+    <link href="bower_components/ionic/release/css/ionic.css" rel="stylesheet">
+
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/angular-route/angular-route.min.js"></script>
+    <script src="bower_components/everlive/min/everlive.all.min.js"></script>
+    <script src="js/angular-locale_bg-bg.js"></script>
+    
+    <script src="bower_components/ionic/release/js/ionic.bundle.js"></script>  
+
+    <script src="scripts/app.js"></script>
+    <script src="scripts/DriversService.js"></script>
+    <script src="scripts/MainController.js"></script>
+    <script src="scripts/DriversController.js"></script>
+    <script src="scripts/ProfileController.js"></script>
+
+</head>
+<body class="homepage" ng-controller="MainController">
+
+    <ion-side-menus>
+
+<ion-side-menu-content>
+  <ion-header-bar class="bar-dark">
+    <h1 class="title">Todo</h1>
+  </ion-header-bar>
+  <ion-content>
+    <!-- our list and list items -->
+    <ion-list>
+      <ion-item ng-repeat="task in tasks">
+        {{task.title}}
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-side-menu-content>
+
+    <!-- Left menu -->
+    <ion-side-menu side="left">
+      <ion-header-bar class="bar-dark">
+        <h1 class="title">Projects</h1>
+      </ion-header-bar>
+    </ion-side-menu>
+
+  </ion-side-menus>
+
+</body>
+</html>
