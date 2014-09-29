@@ -1,4 +1,4 @@
-@charset 'UTF-8';
+﻿@charset 'UTF-8';
 @import url("font-awesome.min.css");
 @import url("http://fonts.googleapis.com/css?family=Open+Sans:400italic,300,700,400,600&subset=latin,cyrillic-ext");
 
@@ -25,29 +25,58 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .homeOne {
-    height: 150px;
+    height: 120px;
     width: auto;
-    padding: 3em 0 0 1.1em;
+    padding: 0 0 0 1.1em;
 }
 
-.homeOne label {
-   font-size: 26px;
-    font-family: 'Open Sans', sans-serif;
-}
+    .homeOne label {
+        font-size: 26px;
+        font-family: 'Open Sans', sans-serif;
+    }
 
 .homeTwo {
     width: auto;
-    height: 170px;
+    height: 210px;
     padding: 1em 1em 1em 1.5em;
 }
 
-.homeTwo label {
-    font-style: italic;
-    font-size: 18px;
-    font-family: 'Open Sans', sans-serif;
-}
+    .homeTwo label {
+        font-style: italic;
+        font-size: 18px;
+        font-family: 'Open Sans', sans-serif;
+    }
 
 .homeThree {
     height: 120px;
+    text-align: center;
+}
+
+.leftBox {
+    float: left;
+    margin-left: 0.1em;
+}
+
+.rightBox {
+    float: right;
+    margin-right: 0.1em;
+}
+
+.uploadOne {
+}
+
+    .uploadOne img {
+        width: 300px;
+    }
+
+.uploadTwo {
+    margin-bottom: 10px;
+}
+
+.uploadThree {
+    margin-bottom: 10px;
+}
+
+.uploadFour {
     text-align: center;
 }

@@ -3,6 +3,16 @@
     var driversService = function ($http) {
         var el = new Everlive("EgXwDq7GEgueXESK");
         var drivers = el.data("Drivers");
+        var photoToUpload = null;
+
+
+        var setPhotoToUpload = function (imageData) {
+            photoToUpload = imageData;
+        }
+
+        var getPhotoToUpload = function () {
+            return photoToUpload;
+        }
 
         var getLatestDrivers = function (limit) {
             var filter = new Everlive.Query();
@@ -26,6 +36,22 @@
 
         var data = function () {
             return drivers;
+        }
+
+        var uploadBase64File = function (payload) {
+            var file = {
+                "Filename": "image.jpeg",
+                "ContentType": "image/jpeg",
+                "base64": "data:image/jpeg;base64," + payload
+            };
+
+            el.Files.create(file,
+                function (data) {
+                    return data.result;
+                },
+                function (error) {
+                    alert(JSON.stringify(error));
+                });
         }
 
         var getDriversByLicense = function (licensePlate) {
@@ -84,7 +110,10 @@
             getLatestDrivers: getLatestDrivers,
             returnValidLicensePlate: returnValidLicensePlate,
             getDriversByLicense: getDriversByLicense,
-            data: data
+            data: data,
+            uploadBase64File: uploadBase64File,
+            getPhotoToUpload: getPhotoToUpload,
+            setPhotoToUpload: setPhotoToUpload
         };
     }
 

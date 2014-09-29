@@ -505,11 +505,17 @@
     <Content Include="scripts\app.js" />
     <Content Include="scripts\DriversController.js" />
     <Content Include="scripts\DriversService.js" />
-    <Content Include="scripts\MainController.js" />
+    <Content Include="scripts\UploadController.js" />
+    <Content Include="scripts\HomeController.js" />
     <Content Include="scripts\ProfileController.js" />
     <Content Include="styles\main.css" />
-    <Content Include="views\Drivers.html" />
-    <Content Include="views\Profile.html" />
+    <Content Include="views\tabs.upload.html" />
+    <Content Include="views\tabs.settings.html" />
+    <Content Include="views\tabs.gallery.html" />
+    <Content Include="views\tabs.home.html" />
+    <Content Include="views\tabs.html" />
+    <Content Include="views\old\Drivers.html" />
+    <Content Include="views\old\Profile.html" />
     <Resource Include="App_Resources\Android\drawable-hdpi\icon.png" />
     <Resource Include="App_Resources\Android\drawable-ldpi\icon.png" />
     <Resource Include="App_Resources\Android\drawable-mdpi\icon.png" />
@@ -677,6 +683,7 @@
     <Folder Include="scripts\" />
     <Folder Include="styles\" />
     <Folder Include="views\" />
+    <Folder Include="views\old\" />
   </ItemGroup>
   <Import Project="$(IceniumTargets)Build.targets" />
   <!--

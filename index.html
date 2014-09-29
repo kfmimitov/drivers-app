@@ -17,43 +17,19 @@
 
     <script src="scripts/app.js"></script>
     <script src="scripts/DriversService.js"></script>
-    <script src="scripts/MainController.js"></script>
-    <script src="scripts/DriversController.js"></script>
-    <script src="scripts/ProfileController.js"></script>
+    <script src="scripts/HomeController.js"></script>
+    <script src="scripts/UploadController.js"></script>
+    <script src="views/tabs.html"></script>
+    <script src="views/tabs.home.html"></script>
 
 </head>
-<body class="homepage" ng-controller="MainController">
+<body class="homepage">
+    <ion-nav-bar class="nav-title-slide-ios7 bar-assertive">
+          <ion-nav-back-button class="button-icon ion-arrow-left-c">
+          </ion-nav-back-button>
+</ion-nav-bar>
 
-    <ion-header-bar class="bar-assertive">
-  <h1 class="title">Rednecks</h1>
-</ion-header-bar>
-
-    <ion-tabs class="tabs-assertive tabs-icon">
-
-  <ion-tab title="Home" icon-on="ion-ios7-filing" icon-off="ion-ios7-filing-outline">
-     
-      <div class="homeOne">
-          <label>Снимай и покажи всеки селянин на пътя!</label>
-      </div>
-      <div class="homeTwo">
-          <label>"Няма нищо по-опасно от глупака, който се опитва да играе ролята на умен." Йохан Гьоте</label>
-      </div>
-      <div class="homeThree">
-          <button class="button button-light" id="CameraButton" ng-click="onCameraClick()">
-                    Направи Снимка
-                </button>
-      </div>   
-  </ion-tab>
-
-  <ion-tab title="Начало" icon-on="ion-ios7-clock" icon-off="ion-ios7-clock-outline">
-    <!-- Tab 2 content -->
-  </ion-tab>
-
-  <ion-tab title="Settings" icon-on="ion-ios7-gear" icon-off="ion-ios7-gear-outline">
-    <!-- Tab 3 content -->
-  </ion-tab>
-
-</ion-tabs>
+    <ion-nav-view animation="slide-left-right"></ion-nav-view>
 
 </body>
 </html>

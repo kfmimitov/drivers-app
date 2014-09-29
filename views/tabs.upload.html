@@ -1,0 +1,18 @@
+﻿<ion-view>
+        <ion-content class="padding">
+            <div class="uploadOne">
+                <img ng-src="{{selectedPicture}}" />
+            </div>
+            <div class="uploadTwo">
+                <input placeholder="Регистрационен номер" ng-model="newDriver.LicensePlate" />
+            </div>
+            <div class="uploadThree">
+                <textarea placeholder="Описание до 100 символа" ng-model="newDriver.Title"></textarea>
+            </div>
+            <div class="uploadFour">
+                 <button class="button button-light" id="btnSelectPhoto" ng-click="onSavePhoto(newDriver);">
+                   Направи "гражданин"
+                </button>
+            </div>
+        </ion-content>
+</ion-view>
