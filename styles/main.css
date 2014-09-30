@@ -27,7 +27,7 @@ h1, h2, h3, h4, h5, h6 {
 .homeOne {
     height: 120px;
     width: auto;
-    padding: 0 0 0 1.1em;
+    padding: 0 0 0 0.5em;
 }
 
     .homeOne label {
@@ -38,7 +38,7 @@ h1, h2, h3, h4, h5, h6 {
 .homeTwo {
     width: auto;
     height: 210px;
-    padding: 1em 1em 1em 1.5em;
+    padding: 1em 1em 1em 1em;
 }
 
     .homeTwo label {

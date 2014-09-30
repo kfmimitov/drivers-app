@@ -31,7 +31,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
           views: {
               'gallery-tab': {
                   templateUrl: "views/tabs.gallery.html",
-                  controller: 'HomeController'
+                  controller: 'DriversController'
               }
           }
       })

@@ -14,7 +14,11 @@
             return photoToUpload;
         }
 
-        var getLatestDrivers = function (limit) {
+        var getLatestDrivers = function (takeItems, skipItems) {
+            
+            if (skipItems == null || isNaN(skipItems)) {
+                skipItems = 0;
+            }
             var filter = new Everlive.Query();
             var expandExpr = {
                 "Picture": {
@@ -22,8 +26,9 @@
                 }
             }
 
+            filter.orderDesc("CreatedAt");
             filter.expand(expandExpr);
-            filter.take(limit);
+            filter.skip(skipItems).take(takeItems);
 
             return drivers.get(filter)
                 .then(function (data) {

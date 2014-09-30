@@ -1,5 +1,16 @@
-﻿<ion-view title="Гражданите">
+﻿<ion-view title="Граждани">
         <ion-content class="padding">
-            todo
+            <ion-list>
+             <ion-item ng-repeat="driver in latestDrivers" class="item-thumbnail-left">
+                 <img data-src="{{driver.Picture}}" class="resimgs">
+                    <h2>{{driver.Title}}</h2>
+                    <p>{{driver.CreatedAt | date : "mediumDate"}}</p>
+              </ion-item>
+                </ion-list>
+            <ion-infinite-scroll
+                ng-if="hasMoreToLoad"
+                on-infinite="loadMoreDrivers()"
+                distance="1%">
+              </ion-infinite-scroll>
         </ion-content>
 </ion-view>
