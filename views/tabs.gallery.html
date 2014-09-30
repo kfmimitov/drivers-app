@@ -1,10 +1,10 @@
 ﻿<ion-view title="Граждани">
         <ion-content class="padding">
             <ion-list>
-             <ion-item ng-repeat="driver in latestDrivers" class="item-thumbnail-left">
-                 <img data-src="{{driver.Picture}}" class="resimgs">
-                    <h2>{{driver.Title}}</h2>
-                    <p>{{driver.CreatedAt | date : "mediumDate"}}</p>
+             <ion-item ng-repeat="driver in latestDrivers" class="item-thumbnail-left driverTitle">
+                 <img data-src="{{driver.Picture}}" class="resimgs ">
+                    <h2 class="">{{driver.Title}}</h2>
+                    <p>{{driver.LicensePlate}} на {{driver.CreatedAt | date : "mediumDate"}}</p>
               </ion-item>
                 </ion-list>
             <ion-infinite-scroll
