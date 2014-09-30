@@ -38,20 +38,14 @@
             return drivers;
         }
 
-        var uploadBase64File = function (payload) {
+        var uploadBase64File = function (payload, onSuccess, onError) {
             var file = {
                 "Filename": "image.jpeg",
                 "ContentType": "image/jpeg",
-                "base64": "data:image/jpeg;base64," + payload
+                "base64": payload
             };
 
-            el.Files.create(file,
-                function (data) {
-                    return data.result;
-                },
-                function (error) {
-                    alert(JSON.stringify(error));
-                });
+            el.Files.create(file, onSuccess, onError);
         }
 
         var getDriversByLicense = function (licensePlate) {

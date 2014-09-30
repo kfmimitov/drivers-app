@@ -1,18 +1,27 @@
-﻿<ion-view>
+﻿<ion-view hide-nav-bar="true" hide-back-button="false">
         <ion-content class="padding">
-            <div class="uploadOne">
-                <img ng-src="{{selectedPicture}}" />
-            </div>
-            <div class="uploadTwo">
-                <input placeholder="Регистрационен номер" ng-model="newDriver.LicensePlate" />
-            </div>
-            <div class="uploadThree">
-                <textarea placeholder="Описание до 100 символа" ng-model="newDriver.Title"></textarea>
-            </div>
-            <div class="uploadFour">
-                 <button class="button button-light" id="btnSelectPhoto" ng-click="onSavePhoto(newDriver);">
-                   Направи "гражданин"
-                </button>
-            </div>
+
+            <form name="newEntryForm">
+                <div class="uploadOne">
+                    <img ng-src="{{selectedPicture}}" />
+                </div>
+                <div class="uploadTwo">
+                        <small class="error" ng-show="newEntryForm.license.$error.required">Регистрационен номер на латински:
+                        </small>
+                    <input placeholder="CA0000HT" ng-model="newDriver.LicensePlate" type="text" required name="license" />
+                </div>
+                <div class="uploadThree">
+                     <small class="error" ng-show="newEntryForm.title.$error.maxlength">
+                         Послание е по-дълго от 100 символа:</small>
+                     <small class="error" ng-show="newEntryForm.title.$error.required">
+                         Послание до 100 символa:</small>
+                    <textarea placeholder="Бързай бавно..." ng-model="newDriver.Title" required ng-maxlength="100" name="title"></textarea>
+                </div>
+                <div class="uploadFour">
+                        <button class="button button-light" id="btnSelectPhoto" ng-click="onSavePhoto(newDriver);">
+                        Дай му "гражданство"
+                    </button>
+                </div>
+            </form>
         </ion-content>
 </ion-view>
