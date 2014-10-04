@@ -1,0 +1,11 @@
+﻿<ion-view title="{{driver.LicensePlate}}">
+        <ion-content class="padding">
+             <h2 class="">{{driver.Title}}</h2>
+             <p>{{driver.CreatedAt | date : "mediumDate"}}</p>
+            <div class="row">
+                <div class="col">
+                    <img data-src="{{driver.Picture}}" class="resimgs driverPicture" />
+                </div>
+            </div>
+        </ion-content>
+</ion-view>

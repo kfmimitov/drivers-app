@@ -1,12 +1,14 @@
 ﻿<ion-view title="Граждани">
-        <ion-content class="padding">
-            <ion-list>
-             <ion-item ng-repeat="driver in latestDrivers" class="item-thumbnail-left driverTitle">
-                 <img data-src="{{driver.Picture}}" class="resimgs ">
-                    <h2 class="">{{driver.Title}}</h2>
-                    <p>{{driver.LicensePlate}} на {{driver.CreatedAt | date : "mediumDate"}}</p>
-              </ion-item>
-                </ion-list>
+        <ion-content>
+                 <div class="list">
+                     <a ng-repeat="driver in latestDrivers"  
+                        ui-sref="tabs.details({selectedLicense : driver.LicensePlate})" 
+                         class="item item-thumbnail-left">
+                     <img data-src="{{driver.Picture}}" class="resimgs" />
+                        <h2 class="">{{driver.Title}}</h2>
+                        <h4>{{driver.LicensePlate}} на {{driver.CreatedAt | date : "mediumDate"}}</h4>
+                     </a>
+                 </div>
             <ion-infinite-scroll
                 ng-if="hasMoreToLoad"
                 on-infinite="loadMoreDrivers()"

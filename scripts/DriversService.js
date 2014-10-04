@@ -53,7 +53,7 @@
             el.Files.create(file, onSuccess, onError);
         }
 
-        var getDriversByLicense = function (licensePlate) {
+        var getDriverByLicense = function (licensePlate) {
 
             var filter = new Everlive.Query();
             filter.where().eq("LicensePlate", licensePlate);
@@ -108,7 +108,7 @@
         return {
             getLatestDrivers: getLatestDrivers,
             returnValidLicensePlate: returnValidLicensePlate,
-            getDriversByLicense: getDriversByLicense,
+            getDriverByLicense: getDriverByLicense,
             data: data,
             uploadBase64File: uploadBase64File,
             getPhotoToUpload: getPhotoToUpload,

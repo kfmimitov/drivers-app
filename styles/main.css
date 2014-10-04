@@ -65,9 +65,9 @@ h1, h2, h3, h4, h5, h6 {
 .uploadOne {
 }
 
-    .uploadOne img {
-        width: 300px;
-    }
+.driverPicture {
+        width: 100%;
+}
 
 .uploadTwo {
     margin-bottom: 10px;
