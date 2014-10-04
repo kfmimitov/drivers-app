@@ -510,6 +510,7 @@
     <Content Include="scripts\ProfileController.js" />
     <Content Include="styles\main.css" />
     <Content Include="views\tabs.details.html" />
+    <Content Include="views\tabs.appologize.html" />
     <Content Include="views\tabs.upload.html" />
     <Content Include="views\tabs.settings.html" />
     <Content Include="views\tabs.gallery.html" />

@@ -12,7 +12,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
           url: "/home",
           views: {
               'home-tab': {
-                  templateUrl: "views/tabs.home.html",
+                  templateUrl: "views/Home/tabs.home.html",
                   controller: 'HomeController'
               }
           }
@@ -21,7 +21,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
         url: "/upload",
         views: {
             'home-tab': {
-                templateUrl: "views/tabs.upload.html",
+                templateUrl: "views/Home/tabs.upload.html",
                 controller: 'UploadController'
             }
         }
@@ -30,7 +30,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
          url: "/gallery",
          views: {
              'gallery-tab': {
-                 templateUrl: "views/tabs.gallery.html",
+                 templateUrl: "views/Gallery/tabs.gallery.html",
                  controller: 'GalleryController'
              }
          }
@@ -39,17 +39,17 @@ app.config(function ($stateProvider, $urlRouterProvider) {
         url: "/settings",
         views: {
             'settings-tab': {
-                templateUrl: "views/tabs.settings.html",
+                templateUrl: "views/Settings/tabs.settings.html",
                 controller: 'HomeController'
             }
         }
     })
-      .state('tabs.details', {
-          url: "/details/:selectedLicense",
+      .state('tabs.incident', {
+          url: "/incidents/:incidentId",
           views: {
               'gallery-tab': {
-                  templateUrl: "views/tabs.details.html",
-                  controller: 'ProfileController'
+                  templateUrl: "views/Gallery/tabs.incident.html",
+                  controller: 'IncidentController'
               }
           }
       });

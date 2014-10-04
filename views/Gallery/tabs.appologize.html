@@ -1,10 +1,17 @@
 ﻿<ion-view title="{{driver.LicensePlate}}">
         <ion-content class="padding">
-             <h2 class="">{{driver.Title}}</h2>
+             <h3 class="">{{driver.Title}}</h3>
              <p>{{driver.CreatedAt | date : "mediumDate"}}</p>
             <div class="row">
                 <div class="col">
                     <img data-src="{{driver.Picture}}" class="resimgs driverPicture" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <button class="button button-light" ng-click="appologize()">
+                        Извини се
+                    </button>
                 </div>
             </div>
         </ion-content>

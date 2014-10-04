@@ -105,14 +105,37 @@
             }
         };
 
+        var getIncidentById = function (searchId) {
+            
+            var filter = new Everlive.Query();
+            filter.where().eq("Id", searchId);
+            var expandExpr = {
+                "Picture": {
+                    "SingleField": "Uri"
+                }
+            }
+
+            filter.expand(expandExpr);
+
+            return drivers.get(filter).then(function (data) {
+
+                return data.result;
+            },
+             function (error) {
+                 console.log(JSON.stringify(error));
+             });
+        }
+
         return {
             getLatestDrivers: getLatestDrivers,
+            getIncidentById : getIncidentById,
             returnValidLicensePlate: returnValidLicensePlate,
             getDriverByLicense: getDriverByLicense,
             data: data,
             uploadBase64File: uploadBase64File,
             getPhotoToUpload: getPhotoToUpload,
             setPhotoToUpload: setPhotoToUpload
+
         };
     }
 
