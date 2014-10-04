@@ -9,9 +9,10 @@
             </div>
             <div class="row">
                 <div class="col">
-                    <button class="button button-light" ng-click="appologize()">
+                    <button ng-hide="driver.HasAppology" class="button button-light button-block" ui-sref="tabs.appologize({incidentId : driver.Id})">
                         Извини се
                     </button>
+                    <label ng-show="driver.HasAppology">Шофьора се е извинил и oчаква одобрение. Браво!</label>
                 </div>
             </div>
         </ion-content>

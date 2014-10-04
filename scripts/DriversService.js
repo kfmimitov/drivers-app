@@ -26,6 +26,7 @@
                 }
             }
 
+            filter.where().ne("IsApproved", true);
             filter.orderDesc("CreatedAt");
             filter.expand(expandExpr);
             filter.skip(skipItems).take(takeItems);
@@ -56,7 +57,11 @@
         var getDriverByLicense = function (licensePlate) {
 
             var filter = new Everlive.Query();
-            filter.where().eq("LicensePlate", licensePlate);
+            filter.where()
+                .and()
+                .eq("LicensePlate", licensePlate)
+                .ne("IsApproved", true)
+                .done();
             var expandExpr = {
                 "Picture": {
                     "SingleField": "Uri"

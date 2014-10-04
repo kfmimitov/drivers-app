@@ -1,18 +1,17 @@
 ﻿<ion-view title="{{driver.LicensePlate}}">
         <ion-content class="padding">
-             <h3 class="">{{driver.Title}}</h3>
-             <p>{{driver.CreatedAt | date : "mediumDate"}}</p>
-            <div class="row">
-                <div class="col">
-                    <img data-src="{{driver.Picture}}" class="resimgs driverPicture" />
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <button class="button button-light" ng-click="appologize()">
-                        Извини се
-                    </button>
-                </div>
-            </div>
+        <form name="newAppology">
+  
+                <label class="item item-input item-stacked-label">
+                     <small class="input-label" ng-show="newAppology.title.$error.maxlength">
+                         Извинението е по-дълго от 200 символа:</small>
+                     <small class="input-label" ng-show="newAppology.title.$error.required">
+                         Извинение до 200 символa:</small>
+                    <textarea placeholder="Извинявам се..." ng-model="appologyText" required ng-maxlength="200" name="title"></textarea>
+                </label>
+                 <button class="button button-light button-block" ng-click="appologize(driver.Id, appologyText);">
+                        Изпрати извинение
+                 </button>
+            </form>
         </ion-content>
 </ion-view>

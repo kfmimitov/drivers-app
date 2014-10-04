@@ -22,7 +22,7 @@
             var formattedLicense = driversService.returnValidLicensePlate(driver.LicensePlate);
             if (formattedLicense != "") {
                 $ionicLoading.show({
-                    template: 'Loading...'
+                    template: 'Изпращане...'
                 });
 
                 driver.LicensePlate = formattedLicense;
