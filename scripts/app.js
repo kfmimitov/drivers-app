@@ -61,70 +61,18 @@ app.config(function ($stateProvider, $urlRouterProvider) {
                 controller: 'NotificationsController'
             }
         }
-    });
+    })
+     .state('tabs.trackLicense', {
+         url: "/track-license",
+         views: {
+             'notifications-tab': {
+                 templateUrl: "views/Notifications/tabs.trackLicense.html",
+                 controller: 'NotificationsController'
+             }
+         }
+     });
 
     $urlRouterProvider.otherwise("/tab/home");
 });
 
 everliveImages.init('EgXwDq7GEgueXESK');
-
-
-//function initApplication() {
-//    document.addEventListener('deviceready', function () {
-
-//        //app.receivedEvent('deviceready');
-
-//        enablePushNotifications();
-
-//    }, false);
-//}
-
-//initApplication();
-
-
-//function initPushwoosh() {
-
-//    var pushNotification = window.plugins.pushNotification;
-
-//    //set push notification callback before we initialize the plugin
-//    document.addEventListener('push-notification', function (event) {
-//        //get the notification payload
-//        var notification = event.notification;
-
-//        //display alert to the user for example
-//        alert(notification.aps.alert);
-
-//        //clear the app badge
-//        pushNotification.setApplicationIconBadgeNumber(0);
-//    });
-
-//    //initialize the plugin
-//    pushNotification.onDeviceReady({ pw_appid: "2177E-9794D" });
-
-//    //register for pushes
-//    pushNotification.registerDevice(
-//        function (status) {
-//            var deviceToken = status['deviceToken'];
-//            console.warn('registerDevice: ' + deviceToken);
-//        },
-//        function (status) {
-//            console.warn('failed to register : ' + JSON.stringify(status));
-//            alert(JSON.stringify(['failed to register ', status]));
-//        }
-//    );
-
-//    //reset badges on app start
-//    pushNotification.setApplicationIconBadgeNumber(0);
-//}
-
-//function initApplication() {
-//    document.addEventListener('deviceready', function () {
-
-//        //app.receivedEvent('deviceready');
-
-//        initPushwoosh();
-
-//    }, false);
-//}
-
-//initApplication();

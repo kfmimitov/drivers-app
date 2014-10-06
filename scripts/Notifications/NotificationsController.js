@@ -1,26 +1,90 @@
 ﻿app.controller("NotificationsController", [
-    "$scope", "driversService",
-    function ($scope, driversService) {
+    "$scope", "driversService", "$state",
+    function ($scope, driversService, $state) {
 
-        var el = new Everlive('EgXwDq7GEgueXESK');
+        $scope.showDeleteButtons = false;
+        $scope.subscribedLicenses = [];
+        $scope.isValidLicense = true;
 
-        var pushSettings = {
-            iOS: {
-                badge: true,
-                sound: true,
-                alert: true
-            },
-            notificationCallbackIOS: function (e) {
-                //logic for handling push in iOS
-            },
-            notificationCallbackAndroid: function (e) {
-                //logic for handling push in Android
+        $scope.showDeleteButtonsClicked = function () {
+            if ($scope.showDeleteButtons) {
+                $scope.showDeleteButtons = false;
             }
-        };
+            else {
+                $scope.showDeleteButtons = true;
+            }
+            $scope.$apply();
+        }
 
-        var enablePushNotifications = function () {
+        $scope.onSaveLicense = function (newLicense) {
 
-            var currentDevice = el.push.currentDevice(false);
+            var newLicensePlate = driversService.returnValidLicensePlate(newLicense);
+            if (newLicensePlate != "") {
+                $scope.subscribedLicenses.push(newLicense);
+                $scope.$apply();
+                var currentDevice = el.push.currentDevice();
+
+                var customParameters = {
+                    "LicensePlate": $scope.subscribedLicenses
+                };
+
+                currentDevice.updateRegistration(customParameters)
+                              .then(function () {
+                                  // the registration was successfully updated
+                                  alert(newLicense + " е успешно добавен в радара.");
+                                  
+                                  $state.go("tabs.notifications");
+                                  $scope.isValidLicense = true;
+                              }, function (error) {
+                                  // failed to update the registration
+                                  alert(JSON.stringify(error));
+                              });
+            }
+            else {
+                $scope.isValidLicense = false;
+                $scope.$apply();
+            }
+           
+        }
+
+        $scope.removeLicense = function (index) {
+            $scope.subscribedLicenses.splice(index, 1);
+            $scope.$apply();
+            
+            var currentDevice = el.push.currentDevice();
+
+            var customParameters = {
+                "LicensePlate": $scope.subscribedLicenses
+            };
+
+            currentDevice.updateRegistration(customParameters)
+                          .then(function () {
+                              // the registration was successfully updated
+                          }, function (error) {
+                              // failed to update the registration
+                              alert(JSON.stringify(error));
+                          });
+        }
+
+        //checking for push notifications
+        var el = new Everlive('EgXwDq7GEgueXESK');
+        function enablePushNotifications() {
+
+            var pushSettings = {
+                iOS: {
+                    badge: true,
+                    sound: true,
+                    alert: true
+                },
+                notificationCallbackIOS: function (e) {
+                    //logic for handling push in iOS
+                },
+                notificationCallbackAndroid: function (e) {
+                    //logic for handling push in Android
+                }
+            };
+
+            var currentDevice = el.push.currentDevice();
 
             // Allow the notifications and obtain a token for the device from 
             // Apple Push Notification service, Google Cloud Messaging for Android, WPNS, etc.
@@ -29,38 +93,30 @@
                 .then(
                     function (initResult) {
                         // notifications were initialized successfully and a token is obtained
-                        alert(JSON.stringify(initResult));
                         // verify the registration in Backend Services
                         return currentDevice.getRegistration();
                     },
                     function (err) {
                         // notifications cannot be initialized
-                        alert(JSON.stringify(err));
+                        console.log(JSON.stringify(err));
                     }
                 ).then(
                     function (registration) {
-                        // currentDevice.getRegistration() tried to obtain the registration from the backend and it exists
-
-                        // we may want to update the device's registration in Backend Services
-                        currentDevice
-                            .updateRegistration(customParameters)
-                            .then(function () {
-                                // the registration was successfully updated
-                            }, function (err) {
-                                // failed to update the registration
-                                alert("fail");
-                            });
+                        //all good
+                        if (registration.result.Parameters.LicensePlate != undefined)
+                        {
+                            $scope.subscribedLicenses = registration.result.Parameters.LicensePlate;
+                            $scope.$apply();
+                        }
                     },
                     function (err) {
                         if (err.code === 801) {
                             // currentDevice.getRegistration() returned an error 801 - there is no such device
-
-                            //we need to register the device
                             currentDevice.register(customParameters)
                                 .then(function (regData) {
-                                    // the device was successfully registered
+                                    alert("registered here" + JSON.stringify(regData));
                                 }, function (err) {
-                                    // failed to register the device
+                                    alert(JSOn.stringify(err));
                                 });
                         } else {
                             // currentDevice.getRegistration() failed with another errorCode than 801
@@ -69,4 +125,6 @@
                     }
                 );
         };
+
+        enablePushNotifications();
     }]);

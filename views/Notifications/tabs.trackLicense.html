@@ -1,0 +1,18 @@
+﻿<ion-view title="Регистрационен номер">
+        <ion-content>
+         <form name="newLicenseTracking">
+                <div class="uploadTwo">
+                        <small class="error" ng-show="newEntryForm.license.$error.required">Регистрационен номер на латински:
+                        </small>
+                        <small class="error" ng-hide="isValidLicense">Въвдете валиден регистрационен номер на латински:
+                        </small>
+                    <input placeholder="CA0000HT" ng-model="licensePlate" type="text" required name="license" />
+                </div>
+                <div class="uploadFour">
+                        <button class="button button-light button-block" id="btnSelectPhoto" ng-click="onSaveLicense(licensePlate);">
+                        Следи за нови снимки
+                    </button>
+                </div>
+            </form>
+        </ion-content>
+</ion-view>

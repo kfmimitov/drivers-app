@@ -1,5 +1,21 @@
 ﻿<ion-view title="Гражданите">
-        <ion-content class="padding">
-            todsdo
+    <ion-nav-buttons side="left">
+         <button class="button button-icon icon ion-minus-circled" ng-click="showDeleteButtonsClicked()"></button>
+        </ion-nav-buttons>
+        <ion-nav-buttons side="right">
+            <button class="button button-icon icon ion-plus-circled" ui-sref="tabs.trackLicense"></button>
+        </ion-nav-buttons>
+        <ion-content>
+             <ion-list show-delete="showDeleteButtons"
+                      can-swipe="true">
+              <ion-item ng-repeat="license in subscribedLicenses">
+
+                <h2>{{license}}</h2>
+
+                <ion-delete-button class="ion-minus-circled"
+                                   ng-click="removeLicense($index)">
+                </ion-delete-button>
+              </ion-item>
+            </ion-list>
         </ion-content>
 </ion-view>
