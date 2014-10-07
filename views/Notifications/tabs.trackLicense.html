@@ -2,14 +2,14 @@
         <ion-content has-bouncing="false"  class="padding">
          <form name="newLicenseTracking">
                 <div class="uploadTwo">
-                        <small class="error" ng-show="newEntryForm.license.$error.required">Регистрационен номер на латински:
+                        <small class="error" ng-show="newLicenseTracking.license.$error.required">Регистрационен номер на латински:
                         </small>
-                        <small class="error" ng-hide="isValidLicense">Въвдете валиден регистрационен номер на латински:
+                        <small class="error" ng-hide="isValidLicense">Въвeдете валиден регистрационен номер на латински:
                         </small>
                     <input placeholder="CA0000HT" ng-model="licensePlate" type="text" required name="license" />
                 </div>
                 <div class="uploadFour">
-                        <button class="button button-light button-block" id="btnSelectPhoto" ng-click="onSaveLicense(licensePlate);">
+                        <button class="button button-calm button-block" id="btnSelectPhoto" ng-click="onSaveLicense(licensePlate);">
                         Следи за нови снимки
                     </button>
                 </div>

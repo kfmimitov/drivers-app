@@ -1,15 +1,14 @@
 ﻿<ion-view title="{{driver.LicensePlate}}">
-        <ion-content class="padding" class="padding">
+        <ion-content has-bouncing="false" class="padding">
         <form name="newAppology">
-  
-                <label class="item item-input item-stacked-label">
+                <div class="item item-input item-stacked-label">
                      <small class="input-label" ng-show="newAppology.title.$error.maxlength">
                          Извинението е по-дълго от 200 символа:</small>
                      <small class="input-label" ng-show="newAppology.title.$error.required">
                          Извинение до 200 символa:</small>
                     <textarea placeholder="Извинявам се..." ng-model="appologyText" required ng-maxlength="200" name="title"></textarea>
-                </label>
-                 <button class="button button-light button-block" ng-click="appologize(driver.Id, appologyText);">
+                </div>
+                 <button class="button button-calm button-block" ng-click="appologize(driver.Id, appologyText);">
                         Изпрати извинение
                  </button>
             </form>

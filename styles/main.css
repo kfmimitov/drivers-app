@@ -25,7 +25,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .homeOne {
-    height: 100px;
+    height: 200px;
     width: auto;
     padding: 0 0 0 0.5em;
 }
@@ -35,26 +35,22 @@ h1, h2, h3, h4, h5, h6 {
         font-family: 'Open Sans', sans-serif;
     }
 
-.homeTwo {
-    width: auto;
-    height: 210px;
-    padding: 1em 1em 1em 1em;
-}
-
-    .homeTwo label {
-        font-style: italic;
-        font-size: 18px;
-        font-family: 'Open Sans', sans-serif;
-    }
-
 .homeThree {
-    height: 120px;
+    height: 200px;
     text-align: center;
 }
 
 .leftBox {
     float: left;
     margin-left: 0.1em;
+}
+
+.searchBox {
+    padding: 0px 5px 0px 10px;
+}
+
+.saveButton {
+    font-weight: 400;
 }
 
 .rightBox {
@@ -87,4 +83,26 @@ h1, h2, h3, h4, h5, h6 {
 
 .driverTitle h2 {
     white-space: normal;
+}
+
+.tab-item.tab-item-active{
+    color: #55acee; 
+}
+
+.tab-item {
+    color: grey;
+    font-weight: 500;
+    margin: -1px;
+}
+
+.bar.bar-calm .title {
+color: white;
+font-weight: 500;
+}
+
+.bar.bar-calm {
+border-color: #1A88EE;
+background-color: #1A88EE;
+background-image: linear-gradient(0deg, #1aacc3, #1aacc3 50%, transparent 50%);
+color: #1A88EE;
 }

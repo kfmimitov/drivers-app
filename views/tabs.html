@@ -1,14 +1,19 @@
 ﻿
-<ion-tabs class="tabs-assertive tabs-icon-top">
-        <ion-tab title="Начало" ui-sref="tabs.home" icon-on="ion-ios7-camera" icon-off="ion-ios7-camera-outline">
-          <ion-nav-view name="home-tab" ></ion-nav-view>
-        </ion-tab>
+<ion-tabs class="tabs-light tabs-icon-top">
 
-        <ion-tab title="Граждани" ui-sref="tabs.gallery" icon-on="ion-ios7-people" icon-off="ion-ios7-people-outline">
+	    <ion-tab title="Гражданите" ui-sref="tabs.gallery" icon-on="ion-model-s" icon-off="ion-model-s">
           <ion-nav-view name="gallery-tab"></ion-nav-view>
         </ion-tab>
 
-        <ion-tab title="Радар" ui-sref="tabs.notifications" icon-on="ion-ios7-world" icon-off="ion-ios7-world-outline">
+        <ion-tab title="Камера" ui-sref="tabs.camera" icon-on="ion-ios7-camera" icon-off="ion-ios7-camera">
+          <ion-nav-view name="camera-tab" ></ion-nav-view>
+        </ion-tab>
+
+        <ion-tab title="Галерия" ui-sref="tabs.album" icon-on="ion-images" icon-off="ion-images">
+          <ion-nav-view name="album-tab"></ion-nav-view>
+        </ion-tab>
+
+         <ion-tab title="Радар" ui-sref="tabs.notifications" icon-on="ion-map" icon-off="ion-map">
           <ion-nav-view name="notifications-tab"></ion-nav-view>
         </ion-tab>
 </ion-tabs>

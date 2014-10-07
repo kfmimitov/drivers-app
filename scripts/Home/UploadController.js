@@ -47,4 +47,8 @@
                 $scope.invalidSearch = true;
             }
         };
+
+        $scope.onCancelUpload = function(){
+            $state.go("tabs.gallery");
+        }    
     }]);

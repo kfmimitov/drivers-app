@@ -8,19 +8,37 @@ app.config(function ($stateProvider, $urlRouterProvider) {
           abstract: true,
           templateUrl: "views/tabs.html"
       })
-      .state('tabs.home', {
-          url: "/home",
+      .state('tabs.camera', {
+          url: "/camera",
           views: {
-              'home-tab': {
-                  templateUrl: "views/Home/tabs.home.html",
-                  controller: 'HomeController'
+              'camera-tab': {
+                  templateUrl: "views/Home/tabs.camera.html",
+                  controller: 'CameraController'
               }
           }
       })
-    .state('tabs.upload', {
-        url: "/upload",
+      .state('tabs.album', {
+          url: "/album",
+          views: {
+              'album-tab': {
+                  templateUrl: "views/Home/tabs.album.html",
+                  controller: 'AlbumController'
+              }
+          }
+      })
+    .state('tabs.upload-camera', {
+        url: "/upload-camera",
         views: {
-            'home-tab': {
+            'camera-tab': {
+                templateUrl: "views/Home/tabs.upload.html",
+                controller: 'UploadController'
+            }
+        }
+    })
+     .state('tabs.upload-album', {
+        url: "/upload-album",
+        views: {
+            'album-tab': {
                 templateUrl: "views/Home/tabs.upload.html",
                 controller: 'UploadController'
             }
@@ -72,7 +90,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
          }
      });
 
-    $urlRouterProvider.otherwise("/tab/home");
+    $urlRouterProvider.otherwise("/tab/gallery");
 });
 
 everliveImages.init('EgXwDq7GEgueXESK');
