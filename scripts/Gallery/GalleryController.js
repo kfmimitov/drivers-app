@@ -1,12 +1,14 @@
 ﻿app.controller("GalleryController", ["$scope", "driversService",
     function ($scope, driversService) {
 
+        var ITEMS_TO_FETCH = 10;
+
         function initializeView() {
-            $scope.loadedItemsCount = 5;
+            $scope.loadedItemsCount = ITEMS_TO_FETCH;
             $scope.hasMoreToLoad = true;
             $scope.searchingValue = "";
 
-            driversService.getLatestDrivers(5).then(function (result) {
+            driversService.getLatestDrivers(ITEMS_TO_FETCH).then(function (result) {
                 $scope.latestDrivers = result;
                 $scope.$apply();
                 everliveImages.responsiveAll();
@@ -14,13 +16,13 @@
         }
 
         $scope.loadMoreDrivers = function () {
-            driversService.getLatestDrivers(5, $scope.loadedItemsCount).then(function (result) {
+            driversService.getLatestDrivers(ITEMS_TO_FETCH, $scope.loadedItemsCount).then(function (result) {
                 if (result.length > 0) {
 
                     //merging the two arrays into one
                     $scope.latestDrivers.push.apply($scope.latestDrivers, result);
                     $scope.$broadcast('scroll.infiniteScrollComplete');
-                    $scope.loadedItemsCount += 5;
+                    $scope.loadedItemsCount += ITEMS_TO_FETCH;
                 }
                 else {
                     $scope.hasMoreToLoad = false;

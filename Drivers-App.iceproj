@@ -22,6 +22,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Content Include=".abproject" />
+    <Content Include="App_Resources\iOS\config.xml" />
     <Content Include="bower.json" />
     <Content Include="bower_components\angular-animate\.bower.json" />
     <Content Include="bower_components\angular-animate\angular-animate.js" />
@@ -513,6 +514,7 @@
     <Content Include="views\Gallery\tabs.incident.html" />
     <Content Include="views\Gallery\tabs.appologize.html" />
     <Content Include="views\Home\tabs.upload.html" />
+    <Content Include="views\Notifications\tabs.trackLicense.html" />
     <Content Include="views\Notifications\tabs.notifications.html" />
     <Content Include="views\Gallery\tabs.gallery.html" />
     <Content Include="views\Home\tabs.home.html" />

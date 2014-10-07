@@ -103,6 +103,7 @@
                 ).then(
                     function (registration) {
                         //all good
+                       
                         if (registration.result.Parameters.LicensePlate != undefined)
                         {
                             $scope.subscribedLicenses = registration.result.Parameters.LicensePlate;
@@ -111,10 +112,11 @@
                     },
                     function (err) {
                         if (err.code === 801) {
+
                             // currentDevice.getRegistration() returned an error 801 - there is no such device
-                            currentDevice.register(customParameters)
+                            currentDevice.register()
                                 .then(function (regData) {
-                                    alert("registered here" + JSON.stringify(regData));
+                                    console.log("the device is registered for push");
                                 }, function (err) {
                                     alert(JSOn.stringify(err));
                                 });

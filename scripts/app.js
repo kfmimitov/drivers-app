@@ -76,3 +76,11 @@ app.config(function ($stateProvider, $urlRouterProvider) {
 });
 
 everliveImages.init('EgXwDq7GEgueXESK');
+
+function onDeviceReady() {
+    //ionic.Platform.fullScreen();
+    StatusBar.overlaysWebView( true );
+    //StatusBar.backgroundColorByName("red");
+}
+
+document.addEventListener("deviceready", onDeviceReady, false);

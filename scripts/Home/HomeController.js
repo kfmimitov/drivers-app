@@ -2,7 +2,6 @@
     "$scope", "driversService", "$state",
     function ($scope, driversService,  $state) {
    
-      
         $scope.onCameraClick = function () {
             navigator.camera.getPicture(cameraSuccess, cameraError, {
                 quality: 75,
