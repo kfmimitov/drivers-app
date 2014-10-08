@@ -503,21 +503,73 @@
     </Content>
     <Content Include="images\notFound.png" />
     <Content Include="index.html" />
+    <Content Include="Plugins\Stripe-master\doc\index.md">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\Stripe-master\doc\index.md" />
+    <Content Include="Plugins\Stripe-master\plugin.xml" />
+    <Content Include="Plugins\Stripe-master\README.md" />
+    <Content Include="Plugins\Stripe-master\src\android\res\values\stripe.xml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\Stripe-master\src\android\res\values\stripe.xml" />
+    <Content Include="Plugins\Stripe-master\src\android\StripePlugin.java">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\Stripe-master\src\android\StripePlugin.java" />
+    <Content Include="Plugins\Stripe-master\src\ios\CDVStripe.h">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\Stripe-master\src\ios\CDVStripe.h" />
+    <Content Include="Plugins\Stripe-master\src\ios\CDVStripe.m">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\Stripe-master\src\ios\CDVStripe.m" />
+    <Content Include="Plugins\Stripe-master\www\charges.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\Stripe-master\www\charges.js" />
+    <Content Include="Plugins\Stripe-master\www\customers.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\Stripe-master\www\customers.js" />
+    <Content Include="Plugins\Stripe-master\www\recipients.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\Stripe-master\www\recipients.js" />
+    <Content Include="Plugins\Stripe-master\www\stripe.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\Stripe-master\www\stripe.js" />
+    <Content Include="Plugins\Stripe-master\www\transfers.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\Stripe-master\www\transfers.js" />
     <Content Include="scripts\app.js" />
     <Content Include="scripts\Gallery\GalleryController.js" />
     <Content Include="scripts\DriversService.js" />
+    <Content Include="scripts\Home\AlbumController.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="scripts\Home\CameraController.js">
+      <SubType>Content</SubType>
+    </Content>
     <Content Include="scripts\Home\UploadController.js" />
-    <Content Include="scripts\Home\HomeController.js" />
     <Content Include="scripts\Gallery\IncidentController.js" />
     <Content Include="scripts\Notifications\NotificationsController.js" />
     <Content Include="styles\main.css" />
     <Content Include="views\Gallery\tabs.incident.html" />
     <Content Include="views\Gallery\tabs.appologize.html" />
+    <Content Include="views\Home\tabs.album.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="views\Home\tabs.camera.html">
+      <SubType>Content</SubType>
+    </Content>
     <Content Include="views\Home\tabs.upload.html" />
     <Content Include="views\Notifications\tabs.trackLicense.html" />
     <Content Include="views\Notifications\tabs.notifications.html" />
     <Content Include="views\Gallery\tabs.gallery.html" />
-    <Content Include="views\Home\tabs.home.html" />
     <Content Include="views\tabs.html" />
     <Resource Include="App_Resources\Android\drawable-hdpi\icon.png" />
     <Resource Include="App_Resources\Android\drawable-ldpi\icon.png" />
@@ -683,6 +735,14 @@
     <Folder Include="images\" />
     <Folder Include="js\" />
     <Folder Include="Plugins\" />
+    <Folder Include="Plugins\Stripe-master\" />
+    <Folder Include="Plugins\Stripe-master\doc\" />
+    <Folder Include="Plugins\Stripe-master\src\" />
+    <Folder Include="Plugins\Stripe-master\src\android\" />
+    <Folder Include="Plugins\Stripe-master\src\android\res\" />
+    <Folder Include="Plugins\Stripe-master\src\android\res\values\" />
+    <Folder Include="Plugins\Stripe-master\src\ios\" />
+    <Folder Include="Plugins\Stripe-master\www\" />
     <Folder Include="scripts\" />
     <Folder Include="scripts\Home\" />
     <Folder Include="scripts\Gallery\" />

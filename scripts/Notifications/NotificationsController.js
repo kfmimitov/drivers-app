@@ -73,11 +73,19 @@
             var pushSettings = {
                 iOS: {
                     badge: true,
-                    sound: true,
+                    sound: true, 
                     alert: true
                 },
                 notificationCallbackIOS: function (e) {
                     //logic for handling push in iOS
+
+                    if (e.foreground == 0) {
+                       var params = { "incidentId" : e.customData};
+                       $state.go("tabs.incident", params);
+                    }
+                    else {
+                        alert(e.alert);
+                    }
                 },
                 notificationCallbackAndroid: function (e) {
                     //logic for handling push in Android
