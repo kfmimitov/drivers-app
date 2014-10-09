@@ -1,15 +1,17 @@
 ﻿app.controller("UploadController", [
-    "$scope", "driversService", "$state", "$stateParams", "$ionicLoading",
-    function ($scope, driversService, $state, $stateParams, $ionicLoading) {
+    "$scope", "driversService", "$state", "$stateParams", "$ionicLoading", "$ionicModal", "$http",
+    function ($scope, driversService, $state, $stateParams, $ionicLoading, $ionicModal, $http) {
 
         $scope.selectedPicture = "data:image/jpeg;base64," + driversService.getPhotoToUpload();
         $scope.invalidSearch = false;
+        $scope.modal = null;
 
         $scope.newDriver = {
             Title: "",
             LicensePlate: "",
             Picture: "",
-            Location : {}
+            Location : {},
+            Address : ""
         };
 
         $scope.origin = angular.copy($scope.newDriver);
@@ -18,8 +20,34 @@
             $scope.newDriver = angular.copy($scope.origin);
         }
         
-        $scope.onSavePhoto = function (driver) {
+        $scope.onSavePhoto = function(driver, reportKat) {
 
+            if(reportKat){
+                getAddressFromGeopoint($scope.newDriver.Location, function(data) {
+                    $scope.newDriver.Address = data.results[0].formatted_address;
+                    $scope.modal.show();
+                },function (error){
+                     $scope.modal.show();
+                });
+            }
+            else
+            {
+                 uploadPhoto(driver);
+            }
+        }
+
+        $scope.onConfirmAddress = function(driver){
+            $scope.modal.hide();
+            uploadPhoto(driver);
+        }
+
+
+        $scope.onCancelUpload = function(){
+            $state.go("tabs.gallery");
+
+        }
+
+        function uploadPhoto(driver){
             var formattedLicense = driversService.returnValidLicensePlate(driver.LicensePlate);
             if (formattedLicense != "") {
                 $ionicLoading.show({
@@ -47,10 +75,6 @@
             else {
                 $scope.invalidSearch = true;
             }
-        };
-
-        $scope.onCancelUpload = function(){
-            $state.go("tabs.gallery");
         }
 
         function getCurrentLocation(){
@@ -62,6 +86,26 @@
                 };
 
             });
+        }
+
+        $ionicModal.fromTemplateUrl('views/Home/modal.address.html', {
+            scope: $scope,
+            animation: 'slide-in-up'
+          }).then(function(modal) { 
+            $scope.modal = modal;
+        });
+
+        $scope.$on('$destroy', function() {
+            $scope.modal.remove();
+        });
+
+        function getAddressFromGeopoint(location, onSuccess, onError){
+
+            var urlToGoogle = "https://maps.googleapis.com/maps/api/geocode/json?latlng=" + location.latitude + "," + location.longitude + "&language=bg";
+
+            $http({method: 'GET', url: urlToGoogle}).
+                  success(onSuccess).
+                  error(onError);
         }
 
         getCurrentLocation();

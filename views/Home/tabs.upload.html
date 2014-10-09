@@ -21,8 +21,10 @@
                     <textarea placeholder="Бързай бавно..." ng-model="newDriver.Title" required ng-maxlength="100" name="title"></textarea>
                 </div>
                 <div class="uploadFour">
-                        <button class="button button-calm button-block" id="btnSelectPhoto" ng-click="onSavePhoto(newDriver);">Дай му "гражданство"</button>
+                        <input ng-model="reportKat" type="checkbox">Изпрати снимката и до КАТ</input>
+                        <button class="button button-calm button-block" id="btnSelectPhoto" ng-click="onSavePhoto(newDriver, reportKat);">Дай му "гражданство"</button>
                 </div>
+
             </form>
         </ion-content>
 </ion-view>
