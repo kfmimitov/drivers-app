@@ -8,7 +8,8 @@
         $scope.newDriver = {
             Title: "",
             LicensePlate: "",
-            Picture: ""
+            Picture: "",
+            Location : {}
         };
 
         $scope.origin = angular.copy($scope.newDriver);
@@ -50,5 +51,18 @@
 
         $scope.onCancelUpload = function(){
             $state.go("tabs.gallery");
-        }    
+        }
+
+        function getCurrentLocation(){
+            navigator.geolocation.getCurrentPosition(function (position){
+                
+                $scope.newDriver.Location = {
+                    longitude: position.coords.longitude,
+                    latitude: position.coords.latitude
+                };
+
+            });
+        }
+
+        getCurrentLocation();
     }]);
