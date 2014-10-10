@@ -85,6 +85,13 @@ h1, h2, h3, h4, h5, h6 {
     white-space: normal;
 }
 
+.LicensePlate {
+    text-transform: uppercase;
+}
+
+input::-webkit-input-placeholder {
+  text-transform: none;
+}
 
 .tab-item.tab-item-active{
     color: #55acee; 
