@@ -1,6 +1,5 @@
-﻿app.controller("CameraController", [
-    "$scope", "driversService", "$state", 
-    function ($scope, driversService,  $state) {
+﻿(function(){
+    var cameraController = function($scope, driversService,  $state) {
 
         function onCameraClick () {
             navigator.camera.getPicture(cameraSuccess, cameraError, {
@@ -22,4 +21,9 @@
         }
 
         onCameraClick();
-    }]);
+    }
+
+    var app = angular.module("Rednecks");
+    app.controller("CameraController", [
+    "$scope", "driversService", "$state", cameraController]);
+})();

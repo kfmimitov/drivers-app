@@ -1,6 +1,5 @@
-﻿app.controller("UploadController", [
-    "$scope", "driversService", "$state", "$stateParams", "$ionicLoading", "$ionicModal", "$http",
-    function ($scope, driversService, $state, $stateParams, $ionicLoading, $ionicModal, $http) {
+﻿(function(){
+    var uploadController = function($scope, driversService, $state, $stateParams, $ionicLoading, $ionicModal, $http) {
 
         $scope.selectedPicture = "data:image/jpeg;base64," + driversService.getPhotoToUpload();
         $scope.invalidSearch = false;
@@ -109,4 +108,10 @@
         }
 
         getCurrentLocation();
-    }]);
+    }
+
+    var app = angular.module("Rednecks");
+    
+    app.controller("UploadController", [
+    "$scope", "driversService", "$state", "$stateParams", "$ionicLoading", "$ionicModal", "$http", uploadController]);
+})();

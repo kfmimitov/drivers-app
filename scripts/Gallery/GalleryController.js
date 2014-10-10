@@ -1,5 +1,6 @@
-﻿app.controller("GalleryController", ["$scope", "driversService", "$state",
-    function ($scope, driversService, $state) {
+﻿(function(){
+
+    var galleryController = function ($scope, driversService, $state) {
 
         var ITEMS_TO_FETCH = 10;
 
@@ -115,4 +116,8 @@
         enablePushNotifications();
         initializeView();
 
-    }]);
+    }
+
+    var app = angular.module("Rednecks");
+    app.controller("GalleryController", ["$scope", "driversService", "$state", galleryController]);
+})();

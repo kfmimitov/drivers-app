@@ -1,6 +1,5 @@
-﻿app.controller("NotificationsController", [
-    "$scope", "driversService", "$state",
-    function ($scope, driversService, $state) {
+﻿(function(){
+   var notificationsController = function($scope, driversService, $state) {
 
         $scope.showDeleteButtons = false;
         $scope.subscribedLicenses = [];
@@ -62,7 +61,7 @@
                               // the registration was successfully updated
                           }, function (error) {
                               // failed to update the registration
-                              alert(JSON.stringify(error));
+                              console(JSON.stringify(error));
                           });
         }
 
@@ -137,4 +136,10 @@
         };
 
         enablePushNotifications();
-    }]);
+    }
+
+    var app = angular.module("Rednecks");
+    app.controller("NotificationsController", [
+    "$scope", "driversService", "$state", notificationsController]);
+})();
+

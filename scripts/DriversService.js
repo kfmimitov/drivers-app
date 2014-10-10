@@ -1,6 +1,5 @@
 ﻿(function () {
-
-    var driversService = function ($http) {
+    var driversService = function () {
         var el = new Everlive("EgXwDq7GEgueXESK");
         var drivers = el.data("Drivers");
         var photoToUpload = null;

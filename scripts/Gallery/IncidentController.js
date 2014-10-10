@@ -1,6 +1,5 @@
-﻿app.controller("IncidentController", [
-    "$scope", "driversService", "$state", "$stateParams", "$ionicLoading",
-    function ($scope, driversService, $state, $stateParams, $ionicLoading) {
+﻿(function(){
+    var incidentController = function ($scope, driversService, $state, $stateParams, $ionicLoading) {
 
         if ($stateParams.incidentId != undefined && $stateParams.incidentId != null) {
 
@@ -29,5 +28,9 @@
                         console.log(JSON.stringify(error));
                     });
         }
+    }
 
-    }]);
+    var app = angular.module("Rednecks");
+    app.controller("IncidentController", [
+    "$scope", "driversService", "$state", "$stateParams", "$ionicLoading", incidentController]);
+})();

@@ -1,6 +1,5 @@
-﻿app.controller("AlbumController", [
-    "$scope", "driversService", "$state",
-    function ($scope, driversService,  $state) {
+﻿(function(){
+    var albumController = function($scope, driversService,  $state) {
 
         function onSelectPhotoClicked() {
             navigator.camera.getPicture(cameraSuccess, cameraError, {
@@ -23,4 +22,9 @@
         }
 
         onSelectPhotoClicked();
-    }]);
+    }
+
+    var app = angular.module("Rednecks");
+    app.controller("AlbumController", [
+    "$scope", "driversService", "$state",albumController]);
+})();
