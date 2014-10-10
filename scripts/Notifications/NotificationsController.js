@@ -30,10 +30,10 @@
                 currentDevice.updateRegistration(customParameters)
                               .then(function () {
                                   // the registration was successfully updated
-                                  alert(newLicensePlate + " е успешно добавен в радара.");
-                                  
-                                  $state.go("tabs.notifications");
-                                  $scope.isValidLicense = true;
+                                  navigator.notification.alert(newLicensePlate + " е успешно добавен в радара.", function(){
+                                    $state.go("tabs.notifications");
+                                    $scope.isValidLicense = true;
+                                  },"Радар");
                               }, function (error) {
                                   // failed to update the registration
                                   alert(JSON.stringify(error));

@@ -102,20 +102,24 @@
         function handlePushNotifications(payload)
         {
             if(typeof payload.IncidentId != "undefined" && payload.IncidentId != null)
-            {
+            { 
                 if (payload.foreground == 1) {
-                    alert(payload.alert);
+                    //alert(payload.alert);
+                    navigator.notification.alert(payload.alert, function(){
+                        $state.go("tabs.incident", { 
+                            "incidentId" : payload.IncidentId
+                        });
+                    },"Съобщение от радара");
+                } else {
+                        $state.go("tabs.incident", { 
+                            "incidentId" : payload.IncidentId
+                        });
                 }
-                
-                $state.go("tabs.incident", { 
-                    "incidentId" : payload.IncidentId
-                });
             }
         }
         
         enablePushNotifications();
         initializeView();
-
     }
 
     var app = angular.module("Rednecks");
