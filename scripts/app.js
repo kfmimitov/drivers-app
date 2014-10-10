@@ -101,7 +101,7 @@ function initializeAnalytics(window) {
 
     // Make analytics available via the window.analytics variable
     // Start analytics by calling window.analytics.Start()
-    var analytics = g.analytics = g.analytics || {};
+    var analytics = window.analytics = window.analytics || {};
     analytics.Start = function () {
         // Handy shortcuts to the analytics api
         var factory = window.plugins.EqatecAnalytics.Factory;
@@ -137,12 +137,14 @@ function onDeviceReady() {
 
 function onPause() {
     window.analytics.Stop();
+    // existing code goes here
 }
 function onResume() {
     window.analytics.Start();
+    // existing code goes here
 }
 
 document.addEventListener("deviceready", onDeviceReady, false);
 document.addEventListener("pause", onPause, false);
 document.addEventListener("resume", onResume, false);
-initializeAnalytics();
+initializeAnalytics(window);
