@@ -4,6 +4,8 @@
         $scope.showDeleteButtons = false;
         $scope.subscribedLicenses = [];
         $scope.isValidLicense = true;
+        var el = new Everlive('EgXwDq7GEgueXESK');
+        var _currentDevice = el.push.currentDevice();
 
         $scope.showDeleteButtonsClicked = function () {
             if ($scope.showDeleteButtons) {
@@ -16,20 +18,21 @@
         }
 
         $scope.onSaveLicense = function (newLicense) {
-
+          
+        
             var newLicensePlate = driversService.returnValidLicensePlate(newLicense);
             if (newLicensePlate != "") {
                 $scope.subscribedLicenses.push(newLicensePlate);
                 $scope.$apply();
-                var currentDevice = el.push.currentDevice();
 
                 var customParameters = {
                     "LicensePlate": $scope.subscribedLicenses
                 };
 
-                currentDevice.updateRegistration(customParameters)
+                _currentDevice.updateRegistration(customParameters)
                               .then(function () {
                                   // the registration was successfully updated
+
                                   navigator.notification.alert(newLicensePlate + " е успешно добавен в радара.", function(){
                                     $state.go("tabs.notifications");
                                     $scope.isValidLicense = true;
@@ -49,14 +52,12 @@
         $scope.removeLicense = function (index) {
             $scope.subscribedLicenses.splice(index, 1);
             $scope.$apply();
-            
-            var currentDevice = el.push.currentDevice();
 
             var customParameters = {
                 "LicensePlate": $scope.subscribedLicenses
             };
 
-            currentDevice.updateRegistration(customParameters)
+            _currentDevice.updateRegistration(customParameters)
                           .then(function () {
                               // the registration was successfully updated
                           }, function (error) {
@@ -66,7 +67,7 @@
         }
 
         //checking for push notifications
-        var el = new Everlive('EgXwDq7GEgueXESK');
+        
         function enablePushNotifications() {
 
             var pushSettings = {
@@ -90,18 +91,16 @@
                     //logic for handling push in Android
                 }
             };
-
-            var currentDevice = el.push.currentDevice();
-
+            
             // Allow the notifications and obtain a token for the device from 
             // Apple Push Notification service, Google Cloud Messaging for Android, WPNS, etc.
             // Relies on the register() method of the PhoneGap PushPlugin
-            currentDevice.enableNotifications(pushSettings)
+            _currentDevice.enableNotifications(pushSettings)
                 .then(
                     function (initResult) {
                         // notifications were initialized successfully and a token is obtained
                         // verify the registration in Backend Services
-                        return currentDevice.getRegistration();
+                        return _currentDevice.getRegistration();
                     },
                     function (err) {
                         // notifications cannot be initialized
@@ -121,7 +120,7 @@
                         if (err.code === 801) {
 
                             // currentDevice.getRegistration() returned an error 801 - there is no such device
-                            currentDevice.register()
+                            _currentDevice.register()
                                 .then(function (regData) {
                                     console.log("the device is registered for push");
                                 }, function (err) {
