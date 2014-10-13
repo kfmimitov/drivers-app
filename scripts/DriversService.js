@@ -121,7 +121,9 @@
 
             filter.expand(expandExpr);
 
-            return drivers.get(filter).then(function (data) {
+            var customHeaderParams = JSON.stringify({"IncrementId" : searchId});
+
+            return drivers.withHeaders({'X-Everlive-Custom-Parameters': customHeaderParams}).get(filter).then(function (data) {
 
                 return data.result;
             },

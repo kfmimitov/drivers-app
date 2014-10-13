@@ -62,12 +62,29 @@
                               // the registration was successfully updated
                           }, function (error) {
                               // failed to update the registration
-                              console(JSON.stringify(error));
+                              console.log(JSON.stringify(error));
                           });
         }
 
-        //checking for push notifications
-        
+        function handlePushNotifications(payload)
+        {
+            if(typeof payload.IncidentId != "undefined" && payload.IncidentId != null)
+            { 
+                if (payload.foreground == 1) {
+                    //alert(payload.alert);
+                    navigator.notification.alert(payload.alert, function(){
+                        $state.go("tabs.incident", { 
+                            "incidentId" : payload.IncidentId
+                        });
+                    },"Съобщение от радара");
+                } else {
+                        $state.go("tabs.incident", { 
+                            "incidentId" : payload.IncidentId
+                        });
+                }
+            }
+        }
+
         function enablePushNotifications() {
 
             var pushSettings = {
@@ -76,20 +93,8 @@
                     sound: true, 
                     alert: true
                 },
-                notificationCallbackIOS: function (e) {
-                    //logic for handling push in iOS
-
-                    if (e.foreground == 0) {
-                       var params = { "incidentId" : e.customData};
-                       $state.go("tabs.incident", params);
-                    }
-                    else {
-                        alert(e.alert);
-                    }
-                },
-                notificationCallbackAndroid: function (e) {
-                    //logic for handling push in Android
-                }
+                notificationCallbackIOS: handlePushNotifications,
+                notificationCallbackAndroid: handlePushNotifications
             };
             
             // Allow the notifications and obtain a token for the device from 

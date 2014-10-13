@@ -1,7 +1,7 @@
 ﻿(function(){
     var incidentController = function ($scope, driversService, $state, $stateParams, $ionicLoading) {
 
-        if ($stateParams.incidentId != undefined && $stateParams.incidentId != null) {
+        if (typeof $stateParams.incidentId != "undefined" && $stateParams.incidentId != null) {
 
             driversService.getIncidentById($stateParams.incidentId).then(function (result) {
                 if (result.length > 0) {
