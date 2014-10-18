@@ -14,7 +14,14 @@
         }
 
         var getLatestDrivers = function (takeItems, skipItems) {
-            
+            return getDrivers(takeItems,skipItems,"CreatedAt");
+        }
+
+        var getTopDrivers = function(takeItems,skipItems){
+            return getDrivers(takeItems,skipItems,"ViewCounter");
+        }
+
+        function getDrivers(takeItems, skipItems, orderDescBy){
             if (skipItems == null || isNaN(skipItems)) {
                 skipItems = 0;
             }
@@ -26,7 +33,7 @@
             }
 
             filter.where().ne("IsApproved", true);
-            filter.orderDesc("CreatedAt");
+            filter.orderDesc(orderDescBy);
             filter.expand(expandExpr);
             filter.skip(skipItems).take(takeItems);
 
@@ -134,6 +141,7 @@
 
         return {
             getLatestDrivers: getLatestDrivers,
+            getTopDrivers: getTopDrivers,
             getIncidentById : getIncidentById,
             returnValidLicensePlate: returnValidLicensePlate,
             getDriverByLicense: getDriverByLicense,
@@ -141,7 +149,6 @@
             uploadBase64File: uploadBase64File,
             getPhotoToUpload: getPhotoToUpload,
             setPhotoToUpload: setPhotoToUpload
-
         };
     }
 

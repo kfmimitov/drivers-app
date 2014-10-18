@@ -3,18 +3,60 @@
     var galleryController = function ($scope, driversService, $state) {
 
         var ITEMS_TO_FETCH = 10;
+        $scope.isFiltering = false;
+        $scope.isSearching = false;
+        $scope.searchState = "Търси";
+        $scope.filterState = "Филтър";
+        $scope.activeFilter = 'latest';
 
         function initializeView() {
             $scope.loadedItemsCount = ITEMS_TO_FETCH;
             $scope.hasMoreToLoad = true;
             $scope.searchingValue = "";
 
-            driversService.getLatestDrivers(ITEMS_TO_FETCH).then(function (result) {
-                $scope.latestDrivers = result;
-                $scope.$apply();
-                everliveImages.responsiveAll();
-            });
+            loadLatestDrivers();
         }
+
+        $scope.setFilter = function() {
+            $scope.isFiltering = !$scope.isFiltering;
+            if($scope.isFiltering)
+            {
+                $scope.filterState = "Затвори";     
+            }
+            else
+            {
+                $scope.filterState = "Филтър";
+            }
+        };
+
+        $scope.setSearch = function() {
+            $scope.isSearching = !$scope.isSearching;
+            if($scope.isSearching)
+            {
+                $scope.searchState = "Затвори";     
+            }
+            else
+            {
+                $scope.searchState = "Търси";
+                loadLatestDrivers();
+            }
+        };
+
+        $scope.setActiveFilter = function(type) {
+            $scope.activeFilter = type;
+            switch(type){
+                case "latest":
+                    loadLatestDrivers();
+                    break;
+                case "top":
+                    loadTopDrivers();
+                    break;
+            }
+        };
+
+        $scope.isActiveFilter = function(type) {
+            return type === $scope.activeFilter;
+        };
 
         $scope.loadMoreDrivers = function () {
             driversService.getLatestDrivers(ITEMS_TO_FETCH, $scope.loadedItemsCount).then(function (result) {
@@ -48,6 +90,22 @@
             }
         }
         
+        function loadLatestDrivers(){
+            driversService.getLatestDrivers(ITEMS_TO_FETCH).then(function (result) {
+                $scope.latestDrivers = result;
+                $scope.$apply();
+                everliveImages.responsiveAll();
+            });
+        }
+
+        function loadTopDrivers(){
+             driversService.getTopDrivers(ITEMS_TO_FETCH).then(function (result) {
+                    $scope.latestDrivers = result;
+                    $scope.$apply();
+                    everliveImages.responsiveAll();
+            });
+        }
+
         function enablePushNotifications() {
 
             var el = new Everlive('EgXwDq7GEgueXESK');
