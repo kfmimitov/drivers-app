@@ -2,9 +2,9 @@
   "ProjectName": "Drivers_App",
   "ProjectGuid": "0cbbb0e0-5c96-4f4a-a800-0db86668d5aa",
   "projectVersion": 1,
-  "AppIdentifier": "com.telerik.demo",
+  "AppIdentifier": "com.xevica.grajdanite",
   "DisplayName": "Grajdanite",
-  "Author": "Ivan Mitov",
+  "Author": "Ksevika OOD",
   "Description": "",
   "BundleVersion": "1.0",
   "AndroidVersionCode": "1",
@@ -22,7 +22,6 @@
   "ProjectTypeGuids": "{070BCB52-5A75-4F8C-A973-144AF0EAFCC9}",
   "FrameworkVersion": "3.5.0",
   "CorePlugins": [
-  
     "org.apache.cordova.battery-status",
     "org.apache.cordova.camera",
     "org.apache.cordova.media-capture",

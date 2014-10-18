@@ -529,7 +529,6 @@
     </Content>
     <Content Include="scripts\Home\UploadController.js" />
     <Content Include="scripts\Gallery\IncidentController.js" />
-    <Content Include="scripts\NativeServices.js" />
     <Content Include="scripts\Notifications\NotificationsController.js" />
     <Content Include="styles\main.css" />
     <Content Include="views\Gallery\tabs.incident.html" />
