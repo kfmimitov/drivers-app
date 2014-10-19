@@ -23,10 +23,26 @@
             <div class="list">
                 <a ng-repeat="driver in latestDrivers"
                     ui-sref="tabs.incident({incidentId : driver.Id})"
-                    class="item item-thumbnail-left">
-                    <img data-src="{{driver.Picture}}" class="resimgs" />
-                    <h2 class="">{{driver.Title}}</h2>
-                    <h4>{{driver.LicensePlate}} на {{driver.CreatedAt | date : "mediumDate"}}</h4>
+                    class="item item-image imageGallery">
+                    <div class="row imageHeader">
+                        <div class="col itemElementLeft">
+                            <h2>{{driver.LicensePlate}} </h2>
+                        </div>
+                        <div class="itemElementRight">
+                            <img class="iconItem" src="images/viewCounter.png" />
+                            <h4>{{driver.ViewCounter}}</h4>
+                        </div>
+                        <div class="itemElementRight">
+                            <img class="iconItem" src="images/clock.png" />
+                            <h4>{{driver.CreatedAt | date : "mediumDate"}}</h4>
+                        </div>
+                    </div>
+                    <div class="imagePreview">
+                        <img data-src="{{driver.Picture}}" class="resimgs" />
+                    </div>
+                    <div class="row imageFooter">
+                        <h3 class="">{{driver.Title}}</h3>
+                    </div>
                 </a>
             </div>
             <ion-infinite-scroll

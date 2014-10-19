@@ -81,6 +81,67 @@ h1, h2, h3, h4, h5, h6 {
     white-space: normal;
 }
 
+.viewCounter {
+    text-align:right;
+}
+
+.imageGallery{
+    margin:5px;
+}
+    .imageGallery h2 {
+        font-weight: bold;
+    }
+    .imageGallery h3 {
+        font-weight: bold;
+    }
+
+.imageHeader {
+    background: rgba(255,255,255,0.75);
+    position:absolute;
+    top:-1px;
+}
+
+.imageHeader h2{
+    color:black;
+}
+
+.imageFooter {
+    background: rgba(255,255,255,0.75);
+    position:absolute;
+    bottom:-1px;
+}
+
+.imageFooter h3 {
+   white-space:pre;
+   text-align:left;
+}
+.imagePreview {
+    min-height: 210px;
+    width: auto;
+    z-index:-10;
+}
+
+.iconItem {
+    width:auto !important;
+    display:inline-block;
+    float:left;
+    margin-right:3px;
+}
+
+.itemElementLeft {
+    text-align:left;
+    padding:0;
+}
+
+.itemElementRight {
+    text-align:right;
+    padding:0;
+    margin:3px 5px 0px 5px;
+}
+
+.itemRight {
+}
+
 .LicensePlate {
     text-transform: uppercase;
 }

@@ -516,7 +516,13 @@
     <Content Include="fonts\FontAwesome.otf">
       <SubType>Content</SubType>
     </Content>
+    <Content Include="images\clock.png">
+      <SubType>Content</SubType>
+    </Content>
     <Content Include="images\notFound.png" />
+    <Content Include="images\viewCounter.png">
+      <SubType>Content</SubType>
+    </Content>
     <Content Include="index.html" />
     <Content Include="scripts\app.js" />
     <Content Include="scripts\Gallery\GalleryController.js" />
