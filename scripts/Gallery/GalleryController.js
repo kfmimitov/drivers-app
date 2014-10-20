@@ -2,7 +2,7 @@
 
     var galleryController = function ($scope, driversService, $state) {
 
-        var ITEMS_TO_FETCH = 10;
+        var ITEMS_TO_FETCH = 5;
         $scope.isFiltering = false;
         $scope.isSearching = false;
         $scope.searchState = "Търси";
@@ -70,11 +70,12 @@
         };
 
         $scope.loadMoreDrivers = function () {
+
             driversService.getLatestDrivers(ITEMS_TO_FETCH, $scope.loadedItemsCount).then(function (result) {
+                everliveImages.responsiveAll();
                 if (result.length > 0) {
 
-                    //merging the two arrays into one
-                    $scope.latestDrivers.push.apply($scope.latestDrivers, result);
+                    $scope.loadedDrivers.push.apply($scope.loadedDrivers, result);
                     $scope.loadedItemsCount += ITEMS_TO_FETCH;
                     $scope.$broadcast('scroll.infiniteScrollComplete');
                 }
@@ -82,7 +83,6 @@
                     $scope.hasMoreToLoad = false;
                     $scope.$apply();
                 }
-                everliveImages.responsiveAll();
             });
         }
 
@@ -91,7 +91,7 @@
 
             if (validLicense != "") {
                 driversService.getDriverByLicense(validLicense).then(function (result) {
-                    $scope.latestDrivers = result;
+                    $scope.loadedDrivers = result;
                     $scope.$apply();
                     everliveImages.responsiveAll();
                 },
@@ -103,7 +103,7 @@
         
         function loadLatestDrivers(){
             driversService.getLatestDrivers(ITEMS_TO_FETCH).then(function (result) {
-                $scope.latestDrivers = result;
+                $scope.loadedDrivers = result;
                 $scope.$apply();
                 everliveImages.responsiveAll();
                 $scope.$broadcast('scroll.refreshComplete');
@@ -112,7 +112,7 @@
 
         function loadTopDrivers(){
              driversService.getTopDrivers(ITEMS_TO_FETCH).then(function (result) {
-                    $scope.latestDrivers = result;
+                    $scope.loadedDrivers = result;
                     $scope.$apply();
                     everliveImages.responsiveAll();
                     $scope.$broadcast('scroll.refreshComplete');

@@ -7,7 +7,7 @@
         </ion-nav-buttons>
         <ion-content has-bouncing="false">
              <ion-refresher
-                pulling-text="Pull to refresh..."
+                pulling-text="Зареждане на нови ..."
                 on-refresh="onRefresh()">
               </ion-refresher>
             <div class="item-input-inset searchBox" ng-show="isSearching">
@@ -26,7 +26,7 @@
                 </div>
             </div>
             <div class="list">
-                <a ng-repeat="driver in latestDrivers"
+                <a ng-repeat="driver in loadedDrivers"
                     ui-sref="tabs.incident({incidentId : driver.Id})"
                     class="item item-image imageGallery">
                     <div class="row imageHeader">
@@ -51,7 +51,7 @@
             <ion-infinite-scroll
                 ng-if="hasMoreToLoad"
                 on-infinite="loadMoreDrivers()"
-                distance="1%">
+                distance="20%">
               </ion-infinite-scroll>
         </ion-content>
 </ion-view>
