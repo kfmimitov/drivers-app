@@ -3,10 +3,10 @@
   "ProjectGuid": "0cbbb0e0-5c96-4f4a-a800-0db86668d5aa",
   "projectVersion": 1,
   "AppIdentifier": "com.xevica.grajdanite",
-  "DisplayName": "Grajdanite",
+  "DisplayName": "Гражданите",
   "Author": "Ksevika OOD",
   "Description": "",
-  "BundleVersion": "1.0",
+  "BundleVersion": "1.01",
   "AndroidVersionCode": "1",
   "iOSDeviceFamily": [
     "1",

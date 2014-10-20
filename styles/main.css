@@ -99,6 +99,7 @@ h1, h2, h3, h4, h5, h6 {
     background: rgba(255,255,255,0.75);
     position:absolute;
     top:-1px;
+    height:28px;
 }
 
 .imageHeader h2{
@@ -115,28 +116,21 @@ h1, h2, h3, h4, h5, h6 {
    white-space:pre;
    text-align:left;
 }
+
 .imagePreview {
     min-height: 210px;
     width: auto;
-    z-index:-10;
-}
-
-.iconItem {
-    width:auto !important;
-    display:inline-block;
-    float:left;
-    margin-right:3px;
 }
 
 .itemElementLeft {
-    text-align:left;
+    text-align:start;
     padding:0;
 }
 
 .itemElementRight {
-    text-align:right;
-    padding:0;
-    margin:3px 5px 0px 5px;
+    margin-top:-8px;
+    margin-right:10px;
+    font-size:13px;
 }
 
 .LicensePlate {
