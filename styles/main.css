@@ -3,7 +3,7 @@
 @import url("http://fonts.googleapis.com/css?family=Open+Sans:400italic,300,700,400,600&subset=latin,cyrillic-ext");
 
 
-body, textarea, select,small {
+body, textarea, select {
     font-family: 'Open Sans', sans-serif;
     font-weight: 300;
     color: #52575c;
@@ -11,12 +11,24 @@ body, textarea, select,small {
     font-size: 15pt;
 }
 
-input, input[type="text"] {
+input, input[type="text"]  {
     font-family: 'Open Sans', sans-serif;
     font-weight: 300;
     color: #52575c;
     line-height: 1.75em;
     font-size: 14pt;
+}
+
+strong {
+    font-weight: 600;
+}
+
+small, input[type="checkbox"] {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 500;
+    color: black;
+    line-height: 1.75em;
+    font-size: 15pt;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -69,12 +81,11 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 10px;
 }
 
-    .uploadThree textarea {
-        height: 150px;
-    }
-
 .uploadFour {
-    text-align: center;
+}
+
+.searchBox {
+    padding: 0px 5px 0px 5px;
 }
 
 .driverTitle h2 {

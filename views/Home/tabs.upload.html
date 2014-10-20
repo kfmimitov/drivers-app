@@ -9,19 +9,19 @@
                     <img ng-src="{{selectedPicture}}" class="driverPicture" />
                 </div>
                 <div class="uploadTwo">
-                        <small class="error" ng-show="newEntryForm.license.$error.required">Регистрационен номер на латински:
-                        </small>
+                        <small class="error">Регистрационен номер</small>
+                        <strong>(EN):</strong>
                     <input class="LicensePlate" placeholder="CA0000HT" ng-model="newDriver.LicensePlate" type="text" required name="license" />
                 </div>
                 <div class="uploadThree">
                      <small class="error" ng-show="newEntryForm.title.$error.maxlength">
                          Послание е по-дълго от 100 символа:</small>
-                     <small class="error" ng-show="newEntryForm.title.$error.required">
+                     <small class="error">
                          Послание до 100 символa:</small>
                     <textarea placeholder="Бързай бавно..." ng-model="newDriver.Title" required ng-maxlength="100" name="title"></textarea>
                 </div>
                 <div class="uploadFour">
-                        <input ng-model="reportKat" type="checkbox">Изпрати снимката и до КАТ</input>
+                        <input ng-model="reportKat" type="checkbox">Изпрати до КАТ (само при неправилно паркиране)</input>
                         <button class="button button-calm button-block" id="btnSelectPhoto" ng-click="onSavePhoto(newDriver, reportKat);">Дай му "гражданство"</button>
                 </div>
             </form>

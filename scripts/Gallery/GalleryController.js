@@ -17,6 +17,17 @@
             loadLatestDrivers();
         }
 
+        $scope.onRefresh = function (){
+            if($scope.activeFilter === "latest")
+            {
+                loadLatestDrivers();
+            }
+            else
+            {
+                loadTopDrivers();
+            }
+        }
+
         $scope.setFilter = function() {
             $scope.isFiltering = !$scope.isFiltering;
             if($scope.isFiltering)
@@ -64,8 +75,8 @@
 
                     //merging the two arrays into one
                     $scope.latestDrivers.push.apply($scope.latestDrivers, result);
-                    $scope.$broadcast('scroll.infiniteScrollComplete');
                     $scope.loadedItemsCount += ITEMS_TO_FETCH;
+                    $scope.$broadcast('scroll.infiniteScrollComplete');
                 }
                 else {
                     $scope.hasMoreToLoad = false;
@@ -95,6 +106,7 @@
                 $scope.latestDrivers = result;
                 $scope.$apply();
                 everliveImages.responsiveAll();
+                $scope.$broadcast('scroll.refreshComplete');
             });
         }
 
@@ -103,6 +115,7 @@
                     $scope.latestDrivers = result;
                     $scope.$apply();
                     everliveImages.responsiveAll();
+                    $scope.$broadcast('scroll.refreshComplete');
             });
         }
 
@@ -133,7 +146,7 @@
                     },
                     function (err) {
                         // notifications cannot be initialized
-                        console.log(JSON.stringify(err));
+                        console.log("Notifications cannot be initialized: " + JSON.stringify(err));
                     }
                 ).then(
                     function (registration) {
