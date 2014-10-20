@@ -22,10 +22,15 @@
         $scope.onSavePhoto = function(driver, reportKat) {
 
             if(reportKat){
+                $ionicLoading.show({
+                    template: 'Търсене на адрес...'
+                });
                 getAddressFromGeopoint($scope.newDriver.Location, function(data) {
                     $scope.newDriver.Address = data.results[0].formatted_address;
+                    $ionicLoading.hide();
                     $scope.modal.show();
                 },function (error){
+                     $ionicLoading.hide();
                      $scope.modal.show();
                 });
             }
@@ -42,8 +47,7 @@
 
 
         $scope.onCancelUpload = function(){
-            $state.go("tabs.gallery");
-
+            $state.go("tabs.gallery", {}, { reload: true });
         }
 
         function uploadPhoto(driver){
