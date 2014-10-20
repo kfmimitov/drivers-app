@@ -1,0 +1,13 @@
+*/**/Thumbs.db
+
+*/**/.DS_Store
+*/**/__MACOSX/**/*
+
+bin/**/*
+obj/**/*
+
+.gitignore
+.git/**/*
+
+.abignore
+.ab/**/*

@@ -1,5 +1,3 @@
 app.ipa
-.ab/build.log
-.ab/Build.zip
-obj/Debug/Drivers_App.zip
-obj/Release/Drivers_App.zip
+.ab/
+obj/
