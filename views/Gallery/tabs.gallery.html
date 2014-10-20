@@ -29,12 +29,10 @@
                             <h2>{{driver.LicensePlate}} </h2>
                         </div>
                         <div class="itemElementRight">
-                            <img class="iconItem" src="images/viewCounter.png" />
-                            <h4>{{driver.ViewCounter}}</h4>
+                            <i class="icon ion-eye"></i> {{driver.ViewCounter}}
                         </div>
                         <div class="itemElementRight">
-                            <img class="iconItem" src="images/clock.png" />
-                            <h4>{{driver.CreatedAt | date : "mediumDate"}}</h4>
+                            <i class="icon ion-clock"></i> {{driver.CreatedAt | date : "mediumDate"}}
                         </div>
                     </div>
                     <div class="imagePreview">
