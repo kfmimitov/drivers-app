@@ -72,11 +72,11 @@
         $scope.loadMoreDrivers = function () {
 
             driversService.getLatestDrivers(ITEMS_TO_FETCH, $scope.loadedItemsCount).then(function (result) {
-                everliveImages.responsiveAll();
                 if (result.length > 0) {
-
                     $scope.loadedDrivers.push.apply($scope.loadedDrivers, result);
                     $scope.loadedItemsCount += ITEMS_TO_FETCH;
+                    $scope.$apply();
+                    everliveImages.responsiveAll();
                     $scope.$broadcast('scroll.infiniteScrollComplete');
                 }
                 else {
@@ -128,10 +128,13 @@
                     sound: true, 
                     alert: true
                 },
+                android:{
+                    senderID: '203821457130'
+                },
                 notificationCallbackIOS: handlePushNotifications,
                 notificationCallbackAndroid: handlePushNotifications
             };
-
+        
             var currentDevice = el.push.currentDevice();
 
             // Allow the notifications and obtain a token for the device from 
@@ -142,6 +145,7 @@
                     function (initResult) {
                         // notifications were initialized successfully and a token is obtained
                         // verify the registration in Backend Services
+
                         return currentDevice.getRegistration();
                     },
                     function (err) {
@@ -160,7 +164,7 @@
                                 .then(function (regData) {
                                     console.log("the device is registered for push");
                                 }, function (err) {
-                                    alert(JSOn.stringify(err));
+                                    console.log(JSON.stringify(err));
                                 });
                         } else {
                             // currentDevice.getRegistration() failed with another errorCode than 801
