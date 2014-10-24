@@ -66,7 +66,7 @@
                           });
         }
 
-        function handlePushNotifications(payload)
+        function handlePushNotificationsIos(payload)
         {
             if(typeof payload.IncidentId != "undefined" && payload.IncidentId != null)
             { 
@@ -84,6 +84,25 @@
                 }
             }
         }
+ 
+        function handlePushNotificationsAndroid(payload)
+        {
+            if(typeof payload.payload.IncidentId != "undefined" && payload.payload.IncidentId != null)
+            { 
+                if (payload.foreground == 1) {
+                    //alert(payload.alert);
+                    navigator.notification.alert(payload.payload.message, function(){
+                        $state.go("tabs.incident", { 
+                            "incidentId" : payload.payload.IncidentId
+                        });
+                    },payload.payload.title);
+                } else {
+                        $state.go("tabs.incident", { 
+                            "incidentId" : payload.payload.IncidentId
+                        });
+                }
+            }
+        }
 
         function enablePushNotifications() {
 
@@ -93,8 +112,11 @@
                     sound: true, 
                     alert: true
                 },
-                notificationCallbackIOS: handlePushNotifications,
-                notificationCallbackAndroid: handlePushNotifications
+                android:{
+                    senderID: '203821457130'
+                },
+                notificationCallbackIOS: handlePushNotificationsIos,
+                notificationCallbackAndroid: handlePushNotificationsAndroid
             };
             
             // Allow the notifications and obtain a token for the device from 

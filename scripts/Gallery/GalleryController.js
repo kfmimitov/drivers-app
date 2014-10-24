@@ -131,8 +131,8 @@
                 android:{
                     senderID: '203821457130'
                 },
-                notificationCallbackIOS: handlePushNotifications,
-                notificationCallbackAndroid: handlePushNotifications
+                notificationCallbackIOS: handlePushNotificationsIos,
+                notificationCallbackAndroid: handlePushNotificationsAndroid
             };
         
             var currentDevice = el.push.currentDevice();
@@ -174,7 +174,8 @@
                 );
         };
 
-        function handlePushNotifications(payload)
+
+        function handlePushNotificationsIos(payload)
         {
             if(typeof payload.IncidentId != "undefined" && payload.IncidentId != null)
             { 
@@ -188,6 +189,25 @@
                 } else {
                         $state.go("tabs.incident", { 
                             "incidentId" : payload.IncidentId
+                        });
+                }
+            }
+        }
+
+        function handlePushNotificationsAndroid(payload)
+        {
+            if(typeof payload.payload.IncidentId != "undefined" && payload.payload.IncidentId != null)
+            { 
+                if (payload.foreground == 1) {
+                    //alert(payload.alert);
+                    navigator.notification.alert(payload.payload.message, function(){
+                        $state.go("tabs.incident", { 
+                            "incidentId" : payload.payload.IncidentId
+                        });
+                    },payload.payload.title);
+                } else {
+                        $state.go("tabs.incident", { 
+                            "incidentId" : payload.payload.IncidentId
                         });
                 }
             }
