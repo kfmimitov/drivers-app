@@ -144,7 +144,7 @@ function onResume() {
     // existing code goes here
 }
 
+initializeAnalytics(window);
 document.addEventListener("deviceready", onDeviceReady, false);
 document.addEventListener("pause", onPause, false);
 document.addEventListener("resume", onResume, false);
-initializeAnalytics(window);

@@ -6,6 +6,9 @@
             <button class="button button-clear" ui-sref="tabs.trackLicense">Добави</button>
         </ion-nav-buttons>
         <ion-content has-bouncing="false">
+          <div class="infoText" ng-hide="subscribedLicenses.length > 0">
+            <span >Следи за нови снимки и нарушения по регистрационен номер. Започни като добавиш <strong>твоя номер</strong>!</span>
+          </div>
              <ion-list show-delete="showDeleteButtons"
                       can-swipe="true">
               <ion-item ng-repeat="license in subscribedLicenses">

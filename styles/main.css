@@ -173,3 +173,9 @@ background-color: #1A88EE;
 background-image: linear-gradient(0deg, #1aacc3, #1aacc3 50%, transparent 50%);
 color: #1A88EE;
 }
+
+.infoText{
+    text-align: center;
+    margin:20px 5px 0 5px;
+}
+

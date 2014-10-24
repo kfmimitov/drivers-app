@@ -25,14 +25,27 @@
                 $ionicLoading.show({
                     template: 'Търсене на адрес...'
                 });
-                getAddressFromGeopoint($scope.newDriver.Location, function(data) {
-                    $scope.newDriver.Address = data.results[0].formatted_address;
+
+                setTimeout(function() {
+                       $ionicLoading.hide();
+                       $scope.modal.show();
+                }, 5000);
+                
+                try{
+                    getAddressFromGeopoint($scope.newDriver.Location, function(data) {
+                        $scope.newDriver.Address = data.results[0].formatted_address;
+                        $ionicLoading.hide();
+                        $scope.modal.show();
+                    },function (error){
+                         $ionicLoading.hide();
+                         $scope.modal.show();
+                    });
+                }
+                catch(error)
+                {
                     $ionicLoading.hide();
                     $scope.modal.show();
-                },function (error){
-                     $ionicLoading.hide();
-                     $scope.modal.show();
-                });
+                }
             }
             else
             {
