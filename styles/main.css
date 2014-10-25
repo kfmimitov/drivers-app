@@ -124,7 +124,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .imageFooter h3 {
-   white-space:pre;
+   white-space:pre-wrap;
    text-align:left;
 }
 
