@@ -5,6 +5,7 @@
 
 bin/**/*
 obj/**/*
+bower_components/**/*
 
 .gitignore
 .git/**/*

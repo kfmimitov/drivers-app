@@ -42,7 +42,7 @@
                     return data.result;
                 },
                 function (error) {
-                    alert(JSON.stringify(error));
+                    console.log(JSON.stringify(error));
                 });
         }
 

@@ -14,12 +14,10 @@
             else {
                 $scope.showDeleteButtons = true;
             }
-            $scope.$apply();
         }
 
         $scope.onSaveLicense = function (newLicense) {
-          
-        
+
             var newLicensePlate = driversService.returnValidLicensePlate(newLicense);
             if (newLicensePlate != "") {
                 $scope.subscribedLicenses.push(newLicensePlate);
@@ -39,7 +37,7 @@
                                   },"Радар");
                               }, function (error) {
                                   // failed to update the registration
-                                  alert(JSON.stringify(error));
+                                  console.log(JSON.stringify(error));
                               });
             }
             else {
@@ -71,7 +69,7 @@
             if(typeof payload.IncidentId != "undefined" && payload.IncidentId != null)
             { 
                 if (payload.foreground == 1) {
-                    //alert(payload.alert);
+               
                     navigator.notification.alert(payload.alert, function(){
                         $state.go("tabs.incident", { 
                             "incidentId" : payload.IncidentId
@@ -90,7 +88,7 @@
             if(typeof payload.payload.IncidentId != "undefined" && payload.payload.IncidentId != null)
             { 
                 if (payload.foreground == 1) {
-                    //alert(payload.alert);
+                 
                     navigator.notification.alert(payload.payload.message, function(){
                         $state.go("tabs.incident", { 
                             "incidentId" : payload.payload.IncidentId
@@ -151,7 +149,7 @@
                                 .then(function (regData) {
                                     console.log("the device is registered for push");
                                 }, function (err) {
-                                    alert(JSOn.stringify(err));
+                                    console.log(JSON.stringify(err));
                                 });
                         } else {
                             // currentDevice.getRegistration() failed with another errorCode than 801
