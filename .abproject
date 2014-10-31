@@ -6,8 +6,8 @@
   "DisplayName": "Гражданите",
   "Author": "Ksevika OOD",
   "Description": "",
-  "BundleVersion": "1.2",
-  "AndroidVersionCode": "1",
+  "BundleVersion": "1.3",
+  "AndroidVersionCode": "3",
   "iOSDeviceFamily": [
     "1",
     "2"
