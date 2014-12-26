@@ -1,13 +1,13 @@
 {
   "ProjectName": "Drivers_App",
   "ProjectGuid": "0cbbb0e0-5c96-4f4a-a800-0db86668d5aa",
-  "projectVersion": 1.2,
+  "projectVersion": "1.3",
   "AppIdentifier": "com.xevica.grajdanite",
   "DisplayName": "Гражданите",
   "Author": "Ksevika OOD",
   "Description": "",
-  "BundleVersion": "1.3",
-  "AndroidVersionCode": "3",
+  "BundleVersion": "1.4",
+  "AndroidVersionCode": "4",
   "iOSDeviceFamily": [
     "1",
     "2"
@@ -49,10 +49,5 @@
     "ID_RESOLUTION_WXGA",
     "ID_RESOLUTION_HD720P"
   ],
-  "Framework": "Cordova",
-  "CordovaPluginVariables": {
-    "com.telerik.mobiletesting": {
-      "IOS_APP_URL": ""
-    }
-  }
+  "Framework": "Cordova"
 }

@@ -1,6 +1,10 @@
 ﻿(function () {
     var driversService = function () {
-        var el = new Everlive("EgXwDq7GEgueXESK");
+        var el = new Everlive({
+            apiKey: "EgXwDq7GEgueXESK",
+            scheme: "https",
+            token: localStorage.getItem('access-token')
+        });
         var drivers = el.data("Drivers");
         var photoToUpload = null;
 
@@ -138,20 +142,57 @@
                  console.log(JSON.stringify(error));
              });
         }
+        
+        var setAccessToken = function (accessToken) {
+            localStorage.setItem('access-token', accessToken);
+        }
 
-        return {
-            getLatestDrivers: getLatestDrivers,
-            getTopDrivers: getTopDrivers,
-            getIncidentById : getIncidentById,
-            returnValidLicensePlate: returnValidLicensePlate,
-            getDriverByLicense: getDriverByLicense,
-            data: data,
-            uploadBase64File: uploadBase64File,
-            getPhotoToUpload: getPhotoToUpload,
-            setPhotoToUpload: setPhotoToUpload
-        };
-    }
+        var loginWithFacebook = function (_successCallback, _errorCallback) {
+            facebookConnectPlugin.login(["email"], function (response) {
+                if (response) {
+
+                    el.Users.loginWithFacebook(response.authResponse.accessToken,
+                    function (data) {
+                        localStorage.setItem('access-token', data.result.access_token);
+                        _successCallback(data);
+                    },
+                    function (error) {
+                        _errorCallback(error);
+                    });
+
+                } else {
+                    console.log("the user is currently not logged in");
+                }
+            });
+        }
+
+        var logoutUser = function () {
+            el.Users.logout(function (){
+                localStorage.removeItem('access-token');
+            }, function (error) {
+                console.log("Failed to logout: " + err.message);
+            });
+        }
+
+        var getCurrentUser = function () {
+            return el.Users.currentUser();
+        }
+    
+    return {
+        getLatestDrivers: getLatestDrivers,
+        getTopDrivers: getTopDrivers,
+        getIncidentById : getIncidentById,
+        returnValidLicensePlate: returnValidLicensePlate,
+        getDriverByLicense: getDriverByLicense,
+        data: data,
+        uploadBase64File: uploadBase64File,
+        getPhotoToUpload: getPhotoToUpload,
+        setPhotoToUpload: setPhotoToUpload,
+        loginWithFacebook: loginWithFacebook,
+        getCurrentUser : getCurrentUser
+    };
+}
 
     var app = angular.module("Rednecks");
-    app.factory("driversService", driversService);
+app.factory("driversService", driversService);
 })();

@@ -2,6 +2,7 @@
 
     var galleryController = function ($scope, driversService, $state) {
 
+
         var ITEMS_TO_FETCH = 5;
         $scope.isFiltering = false;
         $scope.isSearching = false;

@@ -179,3 +179,27 @@ color: #1A88EE;
     margin:20px 5px 0 5px;
 }
 
+.loginWrapper {
+    text-align:center;
+    /*position: relative;
+    width:100%;
+    bottom: 50px;*/
+}
+
+.splash {
+    border-color: #1A88EE;
+    background-color: #1A88EE;
+    color: #1A88EE;
+}
+
+    .splash .title {
+        color: white;
+        font-weight: 500;
+    }
+    .splash .subtitle {
+        color: white;
+    }
+
+    .splash .row-top {
+        margin-bottom: 60px;
+    }

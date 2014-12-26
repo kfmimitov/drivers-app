@@ -3,6 +3,11 @@ var app = angular.module("Rednecks", ["ionic", "ngRoute"]);
 app.config(function ($stateProvider, $urlRouterProvider) {
 
     $stateProvider
+      .state('login', {
+          url: "/login",
+          controller: "LoginController",
+          templateUrl: "views/Login/login.html"
+      })
       .state('tabs', {
           url: "/tab",
           abstract: true,
@@ -36,14 +41,14 @@ app.config(function ($stateProvider, $urlRouterProvider) {
         }
     })
      .state('tabs.upload-album', {
-        url: "/upload-album",
-        views: {
-            'album-tab': {
-                templateUrl: "views/Home/tabs.upload.html",
-                controller: 'UploadController'
-            }
-        }
-    })
+         url: "/upload-album",
+         views: {
+             'album-tab': {
+                 templateUrl: "views/Home/tabs.upload.html",
+                 controller: 'UploadController'
+             }
+         }
+     })
      .state('tabs.gallery', {
          url: "/gallery",
          views: {
@@ -90,7 +95,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
          }
      });
 
-    $urlRouterProvider.otherwise("/tab/gallery");
+    $urlRouterProvider.otherwise("/login");
 });
 
 everliveImages.init('EgXwDq7GEgueXESK');

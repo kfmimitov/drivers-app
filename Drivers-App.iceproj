@@ -22,6 +22,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Content Include=".abproject" />
+    <Content Include=".debug.abproject" />
+    <Content Include=".release.abproject" />
     <Content Include="App_Resources\iOS\config.xml" />
     <Content Include="bower.json" />
     <Content Include="cordova.android.js" />
@@ -48,14 +50,789 @@
     <Content Include="images\clock.png">
       <SubType>Content</SubType>
     </Content>
-    <Content Include="images\notFound.png" />
+    <Content Include="images\logo.png">
+      <SubType>Content</SubType>
+    </Content>
     <Content Include="images\viewCounter.png">
       <SubType>Content</SubType>
     </Content>
     <Content Include="index.html" />
+    <Content Include="js\angular-locale_bg-bg.js">
+      <SubType>Content</SubType>
+    </Content>
     <Content Include="js\angular-route.min.js" />
     <Content Include="js\everlive.all.min.js" />
     <Content Include="js\ionic.bundle.min.js" />
+    <Content Include="Plugins\FacebookConnect\.gitignore">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\.gitmodules">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\LICENSE">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\.classpath">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\.project">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\AndroidManifest.xml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\build.gradle">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\build.xml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\libs\android-support-v4.jar">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\libs\bolts.jar">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\libs\BUCK">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\project.properties">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\res\drawable-hdpi\com_facebook_button_blue_focused.9.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\res\drawable-hdpi\com_facebook_button_blue_normal.9.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\res\drawable-hdpi\com_facebook_button_blue_pressed.9.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\res\drawable-hdpi\com_facebook_button_grey_focused.9.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\res\drawable-hdpi\com_facebook_button_grey_normal.9.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\res\drawable-hdpi\com_facebook_button_grey_pressed.9.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\res\drawable-hdpi\com_facebook_close.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\res\drawable-hdpi\com_facebook_inverse_icon.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\res\drawable-hdpi\com_facebook_logo.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\res\drawable-hdpi\com_facebook_picker_magnifier.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\res\drawable-hdpi\com_facebook_tooltip_black_background.9.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\res\drawable-hdpi\com_facebook_tooltip_black_bottomnub.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\res\drawable-hdpi\com_facebook_tooltip_black_topnub.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\res\drawable-hdpi\com_facebook_tooltip_black_xout.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\res\drawable-hdpi\com_facebook_tooltip_blue_background.9.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\res\drawable-hdpi\com_facebook_tooltip_blue_bottomnub.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\res\drawable-hdpi\com_facebook_tooltip_blue_topnub.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\res\drawable-hdpi\com_facebook_tooltip_blue_xout.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\res\drawable-ldpi\com_facebook_close.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\res\drawable-mdpi\com_facebook_button_blue_focused.9.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\res\drawable-mdpi\com_facebook_button_blue_normal.9.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\res\drawable-mdpi\com_facebook_button_blue_pressed.9.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\res\drawable-mdpi\com_facebook_inverse_icon.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\res\drawable-mdpi\com_facebook_picker_magnifier.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\res\drawable-mdpi\com_facebook_tooltip_black_background.9.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\res\drawable-mdpi\com_facebook_tooltip_black_bottomnub.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\res\drawable-mdpi\com_facebook_tooltip_black_topnub.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\res\drawable-mdpi\com_facebook_tooltip_black_xout.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\res\drawable-mdpi\com_facebook_tooltip_blue_background.9.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\res\drawable-mdpi\com_facebook_tooltip_blue_bottomnub.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\res\drawable-mdpi\com_facebook_tooltip_blue_topnub.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\res\drawable-mdpi\com_facebook_tooltip_blue_xout.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\res\drawable-xhdpi\com_facebook_button_blue_focused.9.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\res\drawable-xhdpi\com_facebook_button_blue_normal.9.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\res\drawable-xhdpi\com_facebook_button_blue_pressed.9.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\res\drawable-xhdpi\com_facebook_button_grey_focused.9.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\res\drawable-xhdpi\com_facebook_button_grey_normal.9.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\res\drawable-xhdpi\com_facebook_button_grey_pressed.9.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\res\drawable-xhdpi\com_facebook_close.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\res\drawable-xhdpi\com_facebook_inverse_icon.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\res\drawable-xhdpi\com_facebook_logo.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\res\drawable-xhdpi\com_facebook_picker_magnifier.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\res\drawable-xhdpi\com_facebook_tooltip_black_background.9.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\res\drawable-xhdpi\com_facebook_tooltip_black_bottomnub.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\res\drawable-xhdpi\com_facebook_tooltip_black_topnub.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\res\drawable-xhdpi\com_facebook_tooltip_black_xout.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\res\drawable-xhdpi\com_facebook_tooltip_blue_background.9.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\res\drawable-xhdpi\com_facebook_tooltip_blue_bottomnub.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\res\drawable-xhdpi\com_facebook_tooltip_blue_topnub.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\res\drawable-xhdpi\com_facebook_tooltip_blue_xout.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\res\drawable\com_facebook_button_blue.xml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\res\drawable\com_facebook_button_blue_focused.9.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\res\drawable\com_facebook_button_blue_normal.9.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\res\drawable\com_facebook_button_blue_pressed.9.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\res\drawable\com_facebook_button_check.xml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\res\drawable\com_facebook_button_check_off.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\res\drawable\com_facebook_button_check_on.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\res\drawable\com_facebook_button_grey_focused.9.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\res\drawable\com_facebook_button_grey_normal.9.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\res\drawable\com_facebook_button_grey_pressed.9.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\res\drawable\com_facebook_close.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\res\drawable\com_facebook_inverse_icon.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\res\drawable\com_facebook_list_divider.9.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\res\drawable\com_facebook_list_section_header_background.9.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\res\drawable\com_facebook_loginbutton_silver.xml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\res\drawable\com_facebook_logo.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\res\drawable\com_facebook_picker_item_background.xml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\res\drawable\com_facebook_picker_list_focused.9.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\res\drawable\com_facebook_picker_list_longpressed.9.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\res\drawable\com_facebook_picker_list_pressed.9.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\res\drawable\com_facebook_picker_list_selector.xml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\res\drawable\com_facebook_picker_list_selector_background_transition.xml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\res\drawable\com_facebook_picker_list_selector_disabled.9.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\res\drawable\com_facebook_picker_top_button.xml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\res\drawable\com_facebook_place_default_icon.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\res\drawable\com_facebook_profile_default_icon.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\res\drawable\com_facebook_profile_picture_blank_portrait.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\res\drawable\com_facebook_profile_picture_blank_square.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\res\drawable\com_facebook_top_background.xml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\res\drawable\com_facebook_top_button.xml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\res\drawable\com_facebook_usersettingsfragment_background_gradient.xml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\res\layout\com_facebook_friendpickerfragment.xml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\res\layout\com_facebook_login_activity_layout.xml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\res\layout\com_facebook_picker_activity_circle_row.xml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\res\layout\com_facebook_picker_checkbox.xml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\res\layout\com_facebook_picker_image.xml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\res\layout\com_facebook_picker_list_row.xml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\res\layout\com_facebook_picker_list_section_header.xml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\res\layout\com_facebook_picker_search_box.xml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\res\layout\com_facebook_picker_title_bar.xml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\res\layout\com_facebook_picker_title_bar_stub.xml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\res\layout\com_facebook_placepickerfragment.xml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\res\layout\com_facebook_placepickerfragment_list_row.xml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\res\layout\com_facebook_search_bar_layout.xml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\res\layout\com_facebook_tooltip_bubble.xml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\res\layout\com_facebook_usersettingsfragment.xml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\res\values-es\strings.xml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\res\values-hdpi\dimens.xml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\res\values-he\strings.xml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\res\values-iw\strings.xml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\res\values-ldpi\dimens.xml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\res\values-mdpi\dimens.xml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\res\values-xhdpi\dimens.xml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\res\values\attrs.xml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\res\values\colors.xml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\res\values\drawables.xml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\res\values\strings.xml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\res\values\styles.xml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\src\com\facebook\AccessToken.java">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\src\com\facebook\AccessTokenSource.java">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\src\com\facebook\android\AsyncFacebookRunner.java">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\src\com\facebook\android\DialogError.java">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\src\com\facebook\android\Facebook.java">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\src\com\facebook\android\FacebookError.java">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\src\com\facebook\android\FbDialog.java">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\src\com\facebook\android\Util.java">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\src\com\facebook\AppEventsConstants.java">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\src\com\facebook\AppEventsLogger.java">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\src\com\facebook\AppLinkData.java">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\src\com\facebook\AuthorizationClient.java">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\src\com\facebook\BoltsMeasurementEventListener.java">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\src\com\facebook\FacebookAppLinkResolver.java">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\src\com\facebook\FacebookAuthorizationException.java">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\src\com\facebook\FacebookBroadcastReceiver.java">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\src\com\facebook\FacebookDialogException.java">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\src\com\facebook\FacebookException.java">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\src\com\facebook\FacebookGraphObjectException.java">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\src\com\facebook\FacebookOperationCanceledException.java">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\src\com\facebook\FacebookRequestError.java">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\src\com\facebook\FacebookSdkVersion.java">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\src\com\facebook\FacebookServiceException.java">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\src\com\facebook\GetTokenClient.java">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\src\com\facebook\HttpMethod.java">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\src\com\facebook\InsightsLogger.java">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\src\com\facebook\internal\AnalyticsEvents.java">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\src\com\facebook\internal\AttributionIdentifiers.java">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\src\com\facebook\internal\CacheableRequestBatch.java">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\src\com\facebook\internal\FileLruCache.java">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\src\com\facebook\internal\ImageDownloader.java">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\src\com\facebook\internal\ImageRequest.java">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\src\com\facebook\internal\ImageResponse.java">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\src\com\facebook\internal\ImageResponseCache.java">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\src\com\facebook\internal\Logger.java">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\src\com\facebook\internal\NativeProtocol.java">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\src\com\facebook\internal\package-info.java">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\src\com\facebook\internal\PlatformServiceClient.java">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\src\com\facebook\internal\ServerProtocol.java">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\src\com\facebook\internal\SessionAuthorizationType.java">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\src\com\facebook\internal\SessionTracker.java">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\src\com\facebook\internal\UrlRedirectCache.java">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\src\com\facebook\internal\Utility.java">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\src\com\facebook\internal\Validate.java">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\src\com\facebook\internal\WorkQueue.java">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\src\com\facebook\LegacyHelper.java">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\src\com\facebook\LoggingBehavior.java">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\src\com\facebook\LoginActivity.java">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\src\com\facebook\model\CreateGraphObject.java">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\src\com\facebook\model\GraphLocation.java">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\src\com\facebook\model\GraphMultiResult.java">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\src\com\facebook\model\GraphObject.java">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\src\com\facebook\model\GraphObjectList.java">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\src\com\facebook\model\GraphPlace.java">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\src\com\facebook\model\GraphUser.java">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\src\com\facebook\model\JsonUtil.java">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\src\com\facebook\model\OpenGraphAction.java">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\src\com\facebook\model\OpenGraphObject.java">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\src\com\facebook\model\PropertyName.java">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\src\com\facebook\NativeAppCallAttachmentStore.java">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\src\com\facebook\NativeAppCallContentProvider.java">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\src\com\facebook\NonCachingTokenCachingStrategy.java">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\src\com\facebook\ProgressNoopOutputStream.java">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\src\com\facebook\ProgressOutputStream.java">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\src\com\facebook\Request.java">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\src\com\facebook\RequestAsyncTask.java">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\src\com\facebook\RequestBatch.java">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\src\com\facebook\RequestOutputStream.java">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\src\com\facebook\RequestProgress.java">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\src\com\facebook\Response.java">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\src\com\facebook\Session.java">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\src\com\facebook\SessionDefaultAudience.java">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\src\com\facebook\SessionLoginBehavior.java">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\src\com\facebook\SessionState.java">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\src\com\facebook\Settings.java">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\src\com\facebook\SharedPreferencesTokenCachingStrategy.java">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\src\com\facebook\TestSession.java">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\src\com\facebook\TokenCachingStrategy.java">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\src\com\facebook\UiLifecycleHelper.java">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\src\com\facebook\widget\FacebookDialog.java">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\src\com\facebook\widget\FacebookFragment.java">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\src\com\facebook\widget\FriendPickerFragment.java">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\src\com\facebook\widget\GraphObjectAdapter.java">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\src\com\facebook\widget\GraphObjectCursor.java">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\src\com\facebook\widget\GraphObjectPagingLoader.java">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\src\com\facebook\widget\LoginButton.java">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\src\com\facebook\widget\PickerFragment.java">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\src\com\facebook\widget\PlacePickerFragment.java">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\src\com\facebook\widget\ProfilePictureView.java">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\src\com\facebook\widget\SimpleGraphObjectCursor.java">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\src\com\facebook\widget\ToolTipPopup.java">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\src\com\facebook\widget\UserSettingsFragment.java">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\FacebookLib\src\com\facebook\widget\WebDialog.java">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\README.md">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\res\values\facebookconnect.xml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\android\src\org\apache\cordova\facebook\ConnectPlugin.java">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\ios\.gitignore">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\ios\FacebookSDK.framework\FacebookSDK">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\ios\FacebookSDK.framework\Headers\FacebookSDK.h">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\ios\FacebookSDK.framework\Headers\FBAccessTokenData.h">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\ios\FacebookSDK.framework\Headers\FBAppCall.h">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\ios\FacebookSDK.framework\Headers\FBAppEvents.h">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\ios\FacebookSDK.framework\Headers\FBAppLinkData.h">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\ios\FacebookSDK.framework\Headers\FBAppLinkResolver.h">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\ios\FacebookSDK.framework\Headers\FBCacheDescriptor.h">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\ios\FacebookSDK.framework\Headers\FBColor.h">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\ios\FacebookSDK.framework\Headers\FBDialogs.h">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\ios\FacebookSDK.framework\Headers\FBDialogsData.h">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\ios\FacebookSDK.framework\Headers\FBDialogsParams.h">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\ios\FacebookSDK.framework\Headers\FBError.h">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\ios\FacebookSDK.framework\Headers\FBErrorUtility.h">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\ios\FacebookSDK.framework\Headers\FBFrictionlessRecipientCache.h">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\ios\FacebookSDK.framework\Headers\FBFriendPickerViewController.h">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\ios\FacebookSDK.framework\Headers\FBGraphLocation.h">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\ios\FacebookSDK.framework\Headers\FBGraphObject.h">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\ios\FacebookSDK.framework\Headers\FBGraphPlace.h">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\ios\FacebookSDK.framework\Headers\FBGraphUser.h">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\ios\FacebookSDK.framework\Headers\FBInsights.h">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\ios\FacebookSDK.framework\Headers\FBLikeControl.h">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Plugins\FacebookConnect\platforms\ios\FacebookSDK.framework\Headers\FBLinkShareParams.h" />
+    <Content Include="Plugins\FacebookConnect\platforms\ios\FacebookSDK.framework\Headers\FBLoginTooltipView.h" />
+    <Content Include="Plugins\FacebookConnect\platforms\ios\FacebookSDK.framework\Headers\FBLoginView.h" />
+    <Content Include="Plugins\FacebookConnect\platforms\ios\FacebookSDK.framework\Headers\FBNativeDialogs.h" />
+    <Content Include="Plugins\FacebookConnect\platforms\ios\FacebookSDK.framework\Headers\FBOpenGraphAction.h" />
+    <Content Include="Plugins\FacebookConnect\platforms\ios\FacebookSDK.framework\Headers\FBOpenGraphActionParams.h" />
+    <Content Include="Plugins\FacebookConnect\platforms\ios\FacebookSDK.framework\Headers\FBOpenGraphActionShareDialogParams.h" />
+    <Content Include="Plugins\FacebookConnect\platforms\ios\FacebookSDK.framework\Headers\FBOpenGraphObject.h" />
+    <Content Include="Plugins\FacebookConnect\platforms\ios\FacebookSDK.framework\Headers\FBPhotoParams.h" />
+    <Content Include="Plugins\FacebookConnect\platforms\ios\FacebookSDK.framework\Headers\FBPlacePickerViewController.h" />
+    <Content Include="Plugins\FacebookConnect\platforms\ios\FacebookSDK.framework\Headers\FBProfilePictureView.h" />
+    <Content Include="Plugins\FacebookConnect\platforms\ios\FacebookSDK.framework\Headers\FBRequest.h" />
+    <Content Include="Plugins\FacebookConnect\platforms\ios\FacebookSDK.framework\Headers\FBRequestConnection.h" />
+    <Content Include="Plugins\FacebookConnect\platforms\ios\FacebookSDK.framework\Headers\FBSDKMacros.h" />
+    <Content Include="Plugins\FacebookConnect\platforms\ios\FacebookSDK.framework\Headers\FBSession.h" />
+    <Content Include="Plugins\FacebookConnect\platforms\ios\FacebookSDK.framework\Headers\FBSessionTokenCachingStrategy.h" />
+    <Content Include="Plugins\FacebookConnect\platforms\ios\FacebookSDK.framework\Headers\FBSettings.h" />
+    <Content Include="Plugins\FacebookConnect\platforms\ios\FacebookSDK.framework\Headers\FBShareDialogParams.h" />
+    <Content Include="Plugins\FacebookConnect\platforms\ios\FacebookSDK.framework\Headers\FBShareDialogPhotoParams.h" />
+    <Content Include="Plugins\FacebookConnect\platforms\ios\FacebookSDK.framework\Headers\FBTestSession.h" />
+    <Content Include="Plugins\FacebookConnect\platforms\ios\FacebookSDK.framework\Headers\FBTooltipView.h" />
+    <Content Include="Plugins\FacebookConnect\platforms\ios\FacebookSDK.framework\Headers\FBUserSettingsViewController.h" />
+    <Content Include="Plugins\FacebookConnect\platforms\ios\FacebookSDK.framework\Headers\FBViewController.h" />
+    <Content Include="Plugins\FacebookConnect\platforms\ios\FacebookSDK.framework\Headers\FBWebDialogs.h" />
+    <Content Include="Plugins\FacebookConnect\platforms\ios\FacebookSDK.framework\Headers\NSError+FBError.h" />
+    <Content Include="Plugins\FacebookConnect\platforms\ios\FacebookSDK.framework\Resources\FacebookSDKResources.bundle.README" />
+    <Content Include="Plugins\FacebookConnect\platforms\ios\FacebookSDK.framework\Resources\FBUserSettingsViewResources.bundle\Contents\Resources\en.lproj\Localizable.strings" />
+    <Content Include="Plugins\FacebookConnect\platforms\ios\FacebookSDK.framework\Resources\FBUserSettingsViewResources.bundle\Contents\Resources\he.lproj\Localizable.strings" />
+    <Content Include="Plugins\FacebookConnect\platforms\ios\FacebookSDK.framework\Resources\FBUserSettingsViewResources.bundle\images\facebook-logo%402x.png" />
+    <Content Include="Plugins\FacebookConnect\platforms\ios\FacebookSDK.framework\Resources\FBUserSettingsViewResources.bundle\images\facebook-logo.png" />
+    <Content Include="Plugins\FacebookConnect\platforms\ios\FacebookSDK.framework\Resources\FBUserSettingsViewResources.bundle\images\loginBackgroundIPadLandscape%402x.jpg" />
+    <Content Include="Plugins\FacebookConnect\platforms\ios\FacebookSDK.framework\Resources\FBUserSettingsViewResources.bundle\images\loginBackgroundIPadLandscape.jpg" />
+    <Content Include="Plugins\FacebookConnect\platforms\ios\FacebookSDK.framework\Resources\FBUserSettingsViewResources.bundle\images\loginBackgroundIPadPortrait%402x.jpg" />
+    <Content Include="Plugins\FacebookConnect\platforms\ios\FacebookSDK.framework\Resources\FBUserSettingsViewResources.bundle\images\loginBackgroundIPadPortrait.jpg" />
+    <Content Include="Plugins\FacebookConnect\platforms\ios\FacebookSDK.framework\Resources\FBUserSettingsViewResources.bundle\images\loginBackgroundIPhonePortrait%402x.jpg" />
+    <Content Include="Plugins\FacebookConnect\platforms\ios\FacebookSDK.framework\Resources\FBUserSettingsViewResources.bundle\images\loginBackgroundIPhonePortrait.jpg" />
+    <Content Include="Plugins\FacebookConnect\platforms\ios\FacebookSDK.framework\Resources\FBUserSettingsViewResources.bundle\images\silver-button-normal%402x.png" />
+    <Content Include="Plugins\FacebookConnect\platforms\ios\FacebookSDK.framework\Resources\FBUserSettingsViewResources.bundle\images\silver-button-normal.png" />
+    <Content Include="Plugins\FacebookConnect\platforms\ios\FacebookSDK.framework\Resources\FBUserSettingsViewResources.bundle\images\silver-button-pressed%402x.png" />
+    <Content Include="Plugins\FacebookConnect\platforms\ios\FacebookSDK.framework\Resources\FBUserSettingsViewResources.bundle\images\silver-button-pressed.png" />
+    <Content Include="Plugins\FacebookConnect\platforms\ios\FacebookSDK.framework\Resources\Info.plist" />
+    <Content Include="Plugins\FacebookConnect\platforms\ios\HelloCordova\Plugins\com.phonegap.plugins.facebookconnect\FacebookConnectPlugin.h" />
+    <Content Include="Plugins\FacebookConnect\platforms\ios\HelloCordova\Plugins\com.phonegap.plugins.facebookconnect\FacebookConnectPlugin.m" />
+    <Content Include="Plugins\FacebookConnect\platforms\ios\README.md" />
+    <Content Include="Plugins\FacebookConnect\plugin.xml" />
+    <Content Include="Plugins\FacebookConnect\README.md" />
+    <Content Include="Plugins\FacebookConnect\www\config.xml" />
+    <Content Include="Plugins\FacebookConnect\www\css\index.css" />
+    <Content Include="Plugins\FacebookConnect\www\img\logo.png" />
+    <Content Include="Plugins\FacebookConnect\www\index.html" />
+    <Content Include="Plugins\FacebookConnect\www\js\facebookConnectPlugin.js" />
+    <Content Include="Plugins\FacebookConnect\www\js\index.js" />
+    <Content Include="Plugins\FacebookConnect\www\phonegap\plugin\facebookConnectPlugin\facebookConnectPlugin.js" />
     <Content Include="scripts\app.js" />
     <Content Include="scripts\Gallery\GalleryController.js" />
     <Content Include="scripts\DriversService.js" />
@@ -67,6 +844,8 @@
     </Content>
     <Content Include="scripts\Home\UploadController.js" />
     <Content Include="scripts\Gallery\IncidentController.js" />
+    <Content Include="scripts\Login\RegisterController.js" />
+    <Content Include="scripts\Login\LoginController.js" />
     <Content Include="scripts\Notifications\NotificationsController.js" />
     <Content Include="fonts\ionicons.eot">
       <SubType>Content</SubType>
@@ -96,6 +875,8 @@
       <SubType>Content</SubType>
     </Content>
     <Content Include="views\Home\tabs.upload.html" />
+    <Content Include="views\Login\register.html" />
+    <Content Include="views\Login\login.html" />
     <Content Include="views\Notifications\tabs.trackLicense.html" />
     <Content Include="views\Notifications\tabs.notifications.html" />
     <Content Include="views\Gallery\tabs.gallery.html" />
@@ -147,14 +928,70 @@
     <Folder Include="images\" />
     <Folder Include="js\" />
     <Folder Include="Plugins\" />
+    <Folder Include="Plugins\FacebookConnect\" />
+    <Folder Include="Plugins\FacebookConnect\platforms\" />
+    <Folder Include="Plugins\FacebookConnect\platforms\android\" />
+    <Folder Include="Plugins\FacebookConnect\platforms\android\FacebookLib\" />
+    <Folder Include="Plugins\FacebookConnect\platforms\android\FacebookLib\libs\" />
+    <Folder Include="Plugins\FacebookConnect\platforms\android\FacebookLib\res\" />
+    <Folder Include="Plugins\FacebookConnect\platforms\android\FacebookLib\res\drawable-hdpi\" />
+    <Folder Include="Plugins\FacebookConnect\platforms\android\FacebookLib\res\drawable-ldpi\" />
+    <Folder Include="Plugins\FacebookConnect\platforms\android\FacebookLib\res\drawable-mdpi\" />
+    <Folder Include="Plugins\FacebookConnect\platforms\android\FacebookLib\res\drawable-xhdpi\" />
+    <Folder Include="Plugins\FacebookConnect\platforms\android\FacebookLib\res\drawable\" />
+    <Folder Include="Plugins\FacebookConnect\platforms\android\FacebookLib\res\layout\" />
+    <Folder Include="Plugins\FacebookConnect\platforms\android\FacebookLib\res\values-es\" />
+    <Folder Include="Plugins\FacebookConnect\platforms\android\FacebookLib\res\values-hdpi\" />
+    <Folder Include="Plugins\FacebookConnect\platforms\android\FacebookLib\res\values-he\" />
+    <Folder Include="Plugins\FacebookConnect\platforms\android\FacebookLib\res\values-iw\" />
+    <Folder Include="Plugins\FacebookConnect\platforms\android\FacebookLib\res\values-ldpi\" />
+    <Folder Include="Plugins\FacebookConnect\platforms\android\FacebookLib\res\values-mdpi\" />
+    <Folder Include="Plugins\FacebookConnect\platforms\android\FacebookLib\res\values-xhdpi\" />
+    <Folder Include="Plugins\FacebookConnect\platforms\android\FacebookLib\res\values\" />
+    <Folder Include="Plugins\FacebookConnect\platforms\android\FacebookLib\src\" />
+    <Folder Include="Plugins\FacebookConnect\platforms\android\FacebookLib\src\com\" />
+    <Folder Include="Plugins\FacebookConnect\platforms\android\FacebookLib\src\com\facebook\" />
+    <Folder Include="Plugins\FacebookConnect\platforms\android\FacebookLib\src\com\facebook\android\" />
+    <Folder Include="Plugins\FacebookConnect\platforms\android\FacebookLib\src\com\facebook\internal\" />
+    <Folder Include="Plugins\FacebookConnect\platforms\android\FacebookLib\src\com\facebook\model\" />
+    <Folder Include="Plugins\FacebookConnect\platforms\android\FacebookLib\src\com\facebook\widget\" />
+    <Folder Include="Plugins\FacebookConnect\platforms\android\res\" />
+    <Folder Include="Plugins\FacebookConnect\platforms\android\res\values\" />
+    <Folder Include="Plugins\FacebookConnect\platforms\android\src\" />
+    <Folder Include="Plugins\FacebookConnect\platforms\android\src\org\" />
+    <Folder Include="Plugins\FacebookConnect\platforms\android\src\org\apache\" />
+    <Folder Include="Plugins\FacebookConnect\platforms\android\src\org\apache\cordova\" />
+    <Folder Include="Plugins\FacebookConnect\platforms\android\src\org\apache\cordova\facebook\" />
+    <Folder Include="Plugins\FacebookConnect\platforms\ios\" />
+    <Folder Include="Plugins\FacebookConnect\platforms\ios\FacebookSDK.framework\" />
+    <Folder Include="Plugins\FacebookConnect\platforms\ios\FacebookSDK.framework\Headers\" />
+    <Folder Include="Plugins\FacebookConnect\platforms\ios\FacebookSDK.framework\Resources\" />
+    <Folder Include="Plugins\FacebookConnect\platforms\ios\FacebookSDK.framework\Resources\FBUserSettingsViewResources.bundle\" />
+    <Folder Include="Plugins\FacebookConnect\platforms\ios\FacebookSDK.framework\Resources\FBUserSettingsViewResources.bundle\Contents\" />
+    <Folder Include="Plugins\FacebookConnect\platforms\ios\FacebookSDK.framework\Resources\FBUserSettingsViewResources.bundle\Contents\Resources\" />
+    <Folder Include="Plugins\FacebookConnect\platforms\ios\FacebookSDK.framework\Resources\FBUserSettingsViewResources.bundle\Contents\Resources\en.lproj\" />
+    <Folder Include="Plugins\FacebookConnect\platforms\ios\FacebookSDK.framework\Resources\FBUserSettingsViewResources.bundle\Contents\Resources\he.lproj\" />
+    <Folder Include="Plugins\FacebookConnect\platforms\ios\FacebookSDK.framework\Resources\FBUserSettingsViewResources.bundle\images\" />
+    <Folder Include="Plugins\FacebookConnect\platforms\ios\HelloCordova\" />
+    <Folder Include="Plugins\FacebookConnect\platforms\ios\HelloCordova\Plugins\" />
+    <Folder Include="Plugins\FacebookConnect\platforms\ios\HelloCordova\Plugins\com.phonegap.plugins.facebookconnect\" />
+    <Folder Include="Plugins\FacebookConnect\www\" />
+    <Folder Include="Plugins\FacebookConnect\www\css\" />
+    <Folder Include="Plugins\FacebookConnect\www\img\" />
+    <Folder Include="Plugins\FacebookConnect\www\js\" />
+    <Folder Include="Plugins\FacebookConnect\www\phonegap\" />
+    <Folder Include="Plugins\FacebookConnect\www\phonegap\plugin\" />
+    <Folder Include="Plugins\FacebookConnect\www\phonegap\plugin\facebookConnectPlugin\" />
     <Folder Include="scripts\" />
     <Folder Include="scripts\Home\" />
     <Folder Include="scripts\Gallery\" />
+    <Folder Include="scripts\Login\" />
     <Folder Include="scripts\Notifications\" />
     <Folder Include="styles\" />
     <Folder Include="views\" />
     <Folder Include="views\Home\" />
     <Folder Include="views\Gallery\" />
+    <Folder Include="views\Login\" />
     <Folder Include="views\Notifications\" />
   </ItemGroup>
   <Import Project="$(IceniumTargets)Build.targets" />
