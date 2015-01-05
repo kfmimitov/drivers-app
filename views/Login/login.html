@@ -16,13 +16,13 @@
                 <button class="button button-light ion-social-facebook icon-left button-block" ng-click="registerWithFacebook()">Регистрация с Facebook</button>
             </div>
             <div class="row">
-                <button class="button button-light ion-email icon-left button-block" ng-click="registerWithEmail()">Регистрация с Email</button>
+                <button class="button button-light ion-email icon-left button-block" ng-click="modalRegister.show();">Регистрация с Email</button>
             </div>
         </div>
     </div>
 </ion-content>
 <ion-footer-bar align-title="center" class="bar-light">
     <div>
-        <h1 class="title">Вече имаш регистрация?</h1>
+        <h1 class="title" ng-click="modalLogin.show();">Вече имаш регистрация?</h1>
     </div>
 </ion-footer-bar>

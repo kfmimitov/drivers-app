@@ -875,7 +875,7 @@
       <SubType>Content</SubType>
     </Content>
     <Content Include="views\Home\tabs.upload.html" />
-    <Content Include="views\Login\register.html" />
+    <Content Include="views\Login\modal.register.html" />
     <Content Include="views\Login\login.html" />
     <Content Include="views\Notifications\tabs.trackLicense.html" />
     <Content Include="views\Notifications\tabs.notifications.html" />

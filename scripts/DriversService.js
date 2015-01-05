@@ -166,7 +166,10 @@
             });
         }
 
-        var registerWithEmail = function (username, displayName, email, password, _successCallback,_errorCallback) {
+        var registerWithEmail = function (username, displayName, email, password, _successCallback, _errorCallback) {
+            //this is a hack to workaround the invalid access token message
+            el.setup.token = null;
+            el.setup.tokenType = null;
 
             var attrs = {
                 Email: email,
@@ -178,19 +181,23 @@
                 password,
                 attrs,
                 function (data) {
-                    el.Users.login(username, // username
-                        password, // password
-                        function (data) {
-                            localStorage.setItem('access-token', data.result.access_token);
-                            _successCallback();
-                        },
-                        function (error) {
-                            _errorCallback(error);
-                        });
+                    loginWithEmail(username, password, _successCallback, _errorCallback);
                 },
                 function (error) {
                     _errorCallback(error);
                 });
+        }
+
+        var loginWithEmail = function (username,password,_successCallback,_errorCallback) {
+            el.Users.login(username, // username
+                       password, // password
+                       function (data) {
+                           localStorage.setItem('access-token', data.result.access_token);
+                           _successCallback();
+                       },
+                       function (error) {
+                           _errorCallback(error);
+                       });
         }
 
         var logoutUser = function () {
@@ -216,6 +223,7 @@
         getPhotoToUpload: getPhotoToUpload,
         setPhotoToUpload: setPhotoToUpload,
         loginWithFacebook: loginWithFacebook,
+        loginWithEmail : loginWithEmail,
         registerWithEmail :  registerWithEmail,
         getCurrentUser: getCurrentUser,
         logoutUser : logoutUser
