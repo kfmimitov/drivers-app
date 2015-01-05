@@ -201,5 +201,12 @@ color: #1A88EE;
     }
 
     .splash .row-top {
-        margin-bottom: 60px;
+        margin-top:40px;
     }
+.splash .logo{
+    width:120px;
+}
+
+.registrationForm small {
+    color:white;
+}

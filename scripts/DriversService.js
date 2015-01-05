@@ -166,11 +166,38 @@
             });
         }
 
+        var registerWithEmail = function (username, displayName, email, password, _successCallback,_errorCallback) {
+
+            var attrs = {
+                Email: email,
+                DisplayName: displayName
+            };
+
+            //Registering the user with the email instead of a username
+            el.Users.register(username,
+                password,
+                attrs,
+                function (data) {
+                    el.Users.login(username, // username
+                        password, // password
+                        function (data) {
+                            localStorage.setItem('access-token', data.result.access_token);
+                            _successCallback();
+                        },
+                        function (error) {
+                            _errorCallback(error);
+                        });
+                },
+                function (error) {
+                    _errorCallback(error);
+                });
+        }
+
         var logoutUser = function () {
             el.Users.logout(function (){
                 localStorage.removeItem('access-token');
             }, function (error) {
-                console.log("Failed to logout: " + err.message);
+                console.log("Failed to logout: " + error.message);
             });
         }
 
@@ -189,7 +216,9 @@
         getPhotoToUpload: getPhotoToUpload,
         setPhotoToUpload: setPhotoToUpload,
         loginWithFacebook: loginWithFacebook,
-        getCurrentUser : getCurrentUser
+        registerWithEmail :  registerWithEmail,
+        getCurrentUser: getCurrentUser,
+        logoutUser : logoutUser
     };
 }
 
