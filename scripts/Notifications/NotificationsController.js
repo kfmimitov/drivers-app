@@ -1,5 +1,5 @@
 ﻿(function(){
-   var notificationsController = function($scope, driversService, $state) {
+   var notificationsController = function($scope, Drivers, $state) {
 
         $scope.showDeleteButtons = false;
         $scope.subscribedLicenses = [];
@@ -18,7 +18,7 @@
 
         $scope.onSaveLicense = function (newLicense) {
 
-            var newLicensePlate = driversService.returnValidLicensePlate(newLicense);
+            var newLicensePlate = Drivers.returnValidLicensePlate(newLicense);
             if (newLicensePlate != "") {
                 $scope.subscribedLicenses.push(newLicensePlate);
                 $scope.$apply();
@@ -164,6 +164,6 @@
 
     var app = angular.module("Rednecks");
     app.controller("NotificationsController", [
-    "$scope", "driversService", "$state", notificationsController]);
+    "$scope", "Drivers", "$state", notificationsController]);
 })();
 

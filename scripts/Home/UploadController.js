@@ -1,7 +1,7 @@
 ﻿(function(){
-    var uploadController = function($scope, driversService, $state, $stateParams, $ionicLoading, $ionicModal, $http) {
+    var uploadController = function($scope, Drivers, $state, $stateParams, $ionicLoading, $ionicModal, $http) {
 
-        $scope.selectedPicture = "data:image/jpeg;base64," + driversService.getPhotoToUpload();
+        $scope.selectedPicture = "data:image/jpeg;base64," + Drivers.getPhotoToUpload();
         $scope.invalidSearch = false;
         $scope.modal = null;
 
@@ -64,7 +64,8 @@
         }
 
         function uploadPhoto(driver){
-            var formattedLicense = driversService.returnValidLicensePlate(driver.LicensePlate);
+
+            var formattedLicense = Drivers.returnValidLicensePlate(driver.LicensePlate);
             if (formattedLicense != "") {
                 $ionicLoading.show({
                     template: 'Изпращане...'
@@ -73,12 +74,12 @@
                 driver.LicensePlate = formattedLicense;
                 $scope.invalidSearch = false;
 
-                var imageData = driversService.getPhotoToUpload();
+                var imageData = Drivers.getPhotoToUpload();
 
-                driversService.uploadBase64File(imageData, function (data) {
+                Drivers.uploadBase64File(imageData, function (data) {
                     driver.Picture = data.result.Id;
 
-                    driversService.data().create(driver, function (success) {
+                    Drivers.data().create(driver, function (success) {
                         reset();
                         $ionicLoading.hide();
                         $state.go("tabs.gallery", {}, { reload: true });
@@ -130,5 +131,5 @@
     var app = angular.module("Rednecks");
     
     app.controller("UploadController", [
-    "$scope", "driversService", "$state", "$stateParams", "$ionicLoading", "$ionicModal", "$http", uploadController]);
+    "$scope", "Drivers", "$state", "$stateParams", "$ionicLoading", "$ionicModal", "$http", uploadController]);
 })();

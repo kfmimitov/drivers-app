@@ -1,5 +1,5 @@
 ﻿(function(){
-    var cameraController = function($scope, driversService,  $state) {
+    var cameraController = function($scope, Drivers,  $state) {
 
         function onCameraClick () {
             navigator.camera.getPicture(cameraSuccess, cameraError, {
@@ -11,7 +11,7 @@
 
         function cameraSuccess(imageData) {
 
-            driversService.setPhotoToUpload(imageData);
+            Drivers.setPhotoToUpload(imageData);
             $state.go("tabs.upload-camera");
         }
 
@@ -25,5 +25,5 @@
 
     var app = angular.module("Rednecks");
     app.controller("CameraController", [
-    "$scope", "driversService", "$state", cameraController]);
+    "$scope", "Drivers", "$state", cameraController]);
 })();

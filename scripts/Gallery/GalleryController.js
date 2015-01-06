@@ -1,6 +1,6 @@
 ﻿(function(){
 
-    var galleryController = function ($scope, driversService, $state) {
+    var galleryController = function ($scope, Drivers, $state) {
 
 
         var ITEMS_TO_FETCH = 5;
@@ -72,7 +72,7 @@
 
         $scope.loadMoreDrivers = function () {
 
-            driversService.getLatestDrivers(ITEMS_TO_FETCH, $scope.loadedItemsCount).then(function (result) {
+            Drivers.getLatestDrivers(ITEMS_TO_FETCH, $scope.loadedItemsCount).then(function (result) {
                 if (result.length > 0) {
                     $scope.loadedDrivers.push.apply($scope.loadedDrivers, result);
                     $scope.loadedItemsCount += ITEMS_TO_FETCH;
@@ -88,10 +88,10 @@
         }
 
         $scope.searchDriver = function (licensePlate) {
-            var validLicense = driversService.returnValidLicensePlate(licensePlate);
+            var validLicense = Drivers.returnValidLicensePlate(licensePlate);
 
             if (validLicense != "") {
-                driversService.getDriverByLicense(validLicense).then(function (result) {
+                Drivers.getDriverByLicense(validLicense).then(function (result) {
                     $scope.loadedDrivers = result;
                     $scope.$apply();
                     everliveImages.responsiveAll();
@@ -103,7 +103,7 @@
         }
         
         function loadLatestDrivers(){
-            driversService.getLatestDrivers(ITEMS_TO_FETCH).then(function (result) {
+            Drivers.getLatestDrivers(ITEMS_TO_FETCH).then(function (result) {
                 $scope.loadedDrivers = result;
                 $scope.$apply();
                 everliveImages.responsiveAll();
@@ -112,7 +112,7 @@
         }
 
         function loadTopDrivers(){
-             driversService.getTopDrivers(ITEMS_TO_FETCH).then(function (result) {
+             Drivers.getTopDrivers(ITEMS_TO_FETCH).then(function (result) {
                     $scope.loadedDrivers = result;
                     $scope.$apply();
                     everliveImages.responsiveAll();
@@ -124,5 +124,5 @@
     }
 
     var app = angular.module("Rednecks");
-    app.controller("GalleryController", ["$scope", "driversService", "$state", galleryController]);
+    app.controller("GalleryController", ["$scope", "Drivers", "$state", galleryController]);
 })();

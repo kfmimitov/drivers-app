@@ -835,7 +835,7 @@
     <Content Include="Plugins\FacebookConnect\www\phonegap\plugin\facebookConnectPlugin\facebookConnectPlugin.js" />
     <Content Include="scripts\app.js" />
     <Content Include="scripts\Gallery\GalleryController.js" />
-    <Content Include="scripts\DriversService.js" />
+    <Content Include="scripts\DriversFactory.js" />
     <Content Include="scripts\Home\AlbumController.js">
       <SubType>Content</SubType>
     </Content>
@@ -844,7 +844,6 @@
     </Content>
     <Content Include="scripts\Home\UploadController.js" />
     <Content Include="scripts\Gallery\IncidentController.js" />
-    <Content Include="scripts\Login\RegisterController.js" />
     <Content Include="scripts\Login\LoginController.js" />
     <Content Include="scripts\Notifications\NotificationsController.js" />
     <Content Include="fonts\ionicons.eot">
@@ -859,6 +858,7 @@
     <Content Include="fonts\ionicons.woff">
       <SubType>Content</SubType>
     </Content>
+    <Content Include="scripts\UsersFactory.js" />
     <Content Include="styles\ionic.min.css">
       <SubType>Content</SubType>
     </Content>
@@ -875,6 +875,7 @@
       <SubType>Content</SubType>
     </Content>
     <Content Include="views\Home\tabs.upload.html" />
+    <Content Include="views\Login\modal.login.html" />
     <Content Include="views\Login\modal.register.html" />
     <Content Include="views\Login\login.html" />
     <Content Include="views\Notifications\tabs.trackLicense.html" />

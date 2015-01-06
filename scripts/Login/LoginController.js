@@ -1,11 +1,11 @@
 ﻿(function () {
-    var loginController = function ($scope, driversService, $state, $ionicModal) {
+    var loginController = function ($scope, Users, $state, $ionicModal) {
 
         $scope.modalRegister = null;
         $scope.modalLogin = null;
 
         //check if the user is already logged in
-        driversService.getCurrentUser()
+        Users.getCurrentUser()
         .then(function (data) {
             if (data.result) {
                 $state.go("tabs.gallery");
@@ -17,7 +17,7 @@
 
         $scope.registerWithFacebook = function () {
 
-            driversService.loginWithFacebook(function (response) {
+            Users.loginWithFacebook(function (response) {
                 $state.go("tabs.gallery");
             }, function (error) {
                 console.log(JSON.stringify(error));
@@ -25,8 +25,8 @@
         }
 
         $scope.register = function (newUser) {
-            driversService.logoutUser();
-            driversService.registerWithEmail(newUser.Username,
+            Users.logoutUser();
+            Users.registerWithEmail(newUser.Username,
                                                 newUser.DisplayName,
                                                 newUser.Email,
                                                 newUser.Password,
@@ -57,7 +57,7 @@
         }
 
         $scope.loginWithEmail = function (existingUser) {
-            driversService.loginWithEmail(existingUser.Username, existingUser.Password, function (success) {
+            Users.loginWithEmail(existingUser.Username, existingUser.Password, function (success) {
                 $state.go("tabs.gallery");
             }, function (error) {
 
@@ -86,5 +86,5 @@
 
     var app = angular.module("Rednecks");
     app.controller("LoginController", [
-    "$scope", "driversService", "$state", "$ionicModal", loginController]);
+    "$scope", "Users", "$state", "$ionicModal", loginController]);
 })();

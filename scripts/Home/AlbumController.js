@@ -1,5 +1,5 @@
 ﻿(function(){
-    var albumController = function($scope, driversService,  $state) {
+    var albumController = function($scope, Drivers,  $state) {
 
         function onSelectPhotoClicked() {
             navigator.camera.getPicture(cameraSuccess, cameraError, {
@@ -12,7 +12,7 @@
 
         function cameraSuccess(imageData) {
 
-            driversService.setPhotoToUpload(imageData);
+            Drivers.setPhotoToUpload(imageData);
             $state.go("tabs.upload-album");
         }
 
@@ -26,5 +26,5 @@
 
     var app = angular.module("Rednecks");
     app.controller("AlbumController", [
-    "$scope", "driversService", "$state",albumController]);
+    "$scope", "Drivers", "$state",albumController]);
 })();
