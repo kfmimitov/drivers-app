@@ -25,6 +25,11 @@
                 </div>
                 </div>
             </div>
+            <div class="card" ng-show="loadedDrivers.length == 0">
+                <div class="item item-text-wrap">
+                    Няма намерени резултатите за регистрационен номер <strong>{{licensePlateSearch}}</strong>.
+                </div>
+            </div>
             <div class="list">
                 <a ng-repeat="driver in loadedDrivers"
                     ui-sref="tabs.incident({incidentId : driver.Id})"
@@ -51,7 +56,7 @@
             <ion-infinite-scroll
                 ng-if="hasMoreToLoad"
                 on-infinite="loadMoreDrivers()"
-                distance="20%">
+                distance="1%">
               </ion-infinite-scroll>
         </ion-content>
 </ion-view>

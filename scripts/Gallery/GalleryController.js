@@ -1,4 +1,4 @@
-﻿(function(){
+﻿(function () {
 
     var galleryController = function ($scope, Drivers, $state) {
 
@@ -18,45 +18,39 @@
             loadLatestDrivers();
         }
 
-        $scope.onRefresh = function (){
-            if($scope.activeFilter === "latest")
-            {
+        $scope.onRefresh = function () {
+            if ($scope.activeFilter === "latest") {
                 loadLatestDrivers();
             }
-            else
-            {
+            else {
                 loadTopDrivers();
             }
         }
 
-        $scope.setFilter = function() {
+        $scope.setFilter = function () {
             $scope.isFiltering = !$scope.isFiltering;
-            if($scope.isFiltering)
-            {
-                $scope.filterState = "Затвори";     
+            if ($scope.isFiltering) {
+                $scope.filterState = "Затвори";
             }
-            else
-            {
+            else {
                 $scope.filterState = "Филтър";
             }
         };
 
-        $scope.setSearch = function() {
+        $scope.setSearch = function () {
             $scope.isSearching = !$scope.isSearching;
-            if($scope.isSearching)
-            {
-                $scope.searchState = "Затвори";     
+            if ($scope.isSearching) {
+                $scope.searchState = "Затвори";
             }
-            else
-            {
+            else {
                 $scope.searchState = "Търси";
                 loadLatestDrivers();
             }
         };
 
-        $scope.setActiveFilter = function(type) {
+        $scope.setActiveFilter = function (type) {
             $scope.activeFilter = type;
-            switch(type){
+            switch (type) {
                 case "latest":
                     loadLatestDrivers();
                     break;
@@ -66,7 +60,7 @@
             }
         };
 
-        $scope.isActiveFilter = function(type) {
+        $scope.isActiveFilter = function (type) {
             return type === $scope.activeFilter;
         };
 
@@ -92,7 +86,9 @@
 
             if (validLicense != "") {
                 Drivers.getDriverByLicense(validLicense).then(function (result) {
+                    $scope.licensePlateSearch = validLicense;
                     $scope.loadedDrivers = result;
+                    $scope.loadedItemsCount = result.length;
                     $scope.$apply();
                     everliveImages.responsiveAll();
                 },
@@ -100,9 +96,12 @@
                     console.log(JSON.stringify(error));
                 });
             }
+            else {
+                navigator.notification.alert("Моля, въведете валиден регистрационен номер.");
+            }
         }
-        
-        function loadLatestDrivers(){
+
+        function loadLatestDrivers() {
             Drivers.getLatestDrivers(ITEMS_TO_FETCH).then(function (result) {
                 $scope.loadedDrivers = result;
                 $scope.$apply();
@@ -111,12 +110,12 @@
             });
         }
 
-        function loadTopDrivers(){
-             Drivers.getTopDrivers(ITEMS_TO_FETCH).then(function (result) {
-                    $scope.loadedDrivers = result;
-                    $scope.$apply();
-                    everliveImages.responsiveAll();
-                    $scope.$broadcast('scroll.refreshComplete');
+        function loadTopDrivers() {
+            Drivers.getTopDrivers(ITEMS_TO_FETCH).then(function (result) {
+                $scope.loadedDrivers = result;
+                $scope.$apply();
+                everliveImages.responsiveAll();
+                $scope.$broadcast('scroll.refreshComplete');
             });
         }
 
