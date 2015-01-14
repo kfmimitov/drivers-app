@@ -74,7 +74,7 @@
         var getCurrentUser = function () {
             return el.Users.currentUser();
         }
-
+         
         return {
             loginWithFacebook: loginWithFacebook,
             loginWithEmail: loginWithEmail,

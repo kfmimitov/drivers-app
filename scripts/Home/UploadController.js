@@ -1,5 +1,5 @@
 ﻿(function(){
-    var uploadController = function($scope, Drivers, $state, $stateParams, $ionicLoading, $ionicModal, $http) {
+    var uploadController = function($scope, Drivers, Reports, $state, $stateParams, $ionicLoading, $ionicModal, $http) {
 
         $scope.selectedPicture = "data:image/jpeg;base64," + Drivers.getPhotoToUpload();
         $scope.invalidSearch = false;
@@ -12,6 +12,13 @@
             Location : {},
             Address : ""
         };
+
+        $scope.newReport = {
+            Name: "",
+            Address: "",
+            Phone: "",
+            Email: ""
+        }
 
         $scope.origin = angular.copy($scope.newDriver);
 
@@ -33,7 +40,7 @@
                 
                 try{
                     getAddressFromGeopoint($scope.newDriver.Location, function(data) {
-                        $scope.newDriver.Address = data.results[0].formatted_address;
+                        $scope.newReport.Address = data.results[0].formatted_address;
                         $ionicLoading.hide();
                         $scope.modal.show();
                     },function (error){
@@ -53,9 +60,9 @@
             }
         }
 
-        $scope.onConfirmAddress = function(driver){
+        $scope.onConfirmAddress = function(driver, report){
             $scope.modal.hide();
-            uploadPhoto(driver);
+            uploadPhoto(driver, report);
         }
 
 
@@ -63,7 +70,7 @@
             $state.go("tabs.gallery", {}, { reload: true });
         }
 
-        function uploadPhoto(driver){
+        function uploadPhoto(driver, report){
 
             var formattedLicense = Drivers.returnValidLicensePlate(driver.LicensePlate);
             if (formattedLicense != "") {
@@ -80,9 +87,31 @@
                     driver.Picture = data.result.Id;
 
                     Drivers.data().create(driver, function (success) {
-                        reset();
+                        if (report != null)
+                        {
+                            report.DriverId = success.result.Id;
+
+                            Reports.create(report).then(function (success) {
+                                reset();
+                                $ionicLoading.hide();
+                                $state.go("tabs.gallery", {}, { reload: true });
+                            }, function (error) {
+                                $ionicLoading.hide();
+                                navigator.notification.alert("Проблем с качването на снимката, моля опитайте отново!");
+                                console.log(JSON.stringify(error));
+                            });
+                        }
+                        else
+                        {
+                            reset();
+                            $ionicLoading.hide();
+                            $state.go("tabs.gallery", {}, { reload: true });
+                        }
+                      
+                    }, function (error) {
                         $ionicLoading.hide();
-                        $state.go("tabs.gallery", {}, { reload: true });
+                        navigator.notification.alert("Проблем с качването на снимката, моля опитайте отново!");
+                        console.log(JSON.stringify(error));
                     });
                 },
                 function (error) {
@@ -131,5 +160,5 @@
     var app = angular.module("Rednecks");
     
     app.controller("UploadController", [
-    "$scope", "Drivers", "$state", "$stateParams", "$ionicLoading", "$ionicModal", "$http", uploadController]);
+    "$scope", "Drivers", "Reports", "$state", "$stateParams", "$ionicLoading", "$ionicModal", "$http", uploadController]);
 })();

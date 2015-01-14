@@ -835,7 +835,7 @@
     <Content Include="Plugins\FacebookConnect\www\phonegap\plugin\facebookConnectPlugin\facebookConnectPlugin.js" />
     <Content Include="scripts\app.js" />
     <Content Include="scripts\Gallery\GalleryController.js" />
-    <Content Include="scripts\DriversFactory.js" />
+    <Content Include="scripts\Factories\DriversFactory.js" />
     <Content Include="scripts\Home\AlbumController.js">
       <SubType>Content</SubType>
     </Content>
@@ -858,7 +858,8 @@
     <Content Include="fonts\ionicons.woff">
       <SubType>Content</SubType>
     </Content>
-    <Content Include="scripts\UsersFactory.js" />
+    <Content Include="scripts\Factories\ReportsFactory.js" />
+    <Content Include="scripts\Factories\UsersFactory.js" />
     <Content Include="styles\ionic.min.css">
       <SubType>Content</SubType>
     </Content>
@@ -987,6 +988,7 @@
     <Folder Include="scripts\Home\" />
     <Folder Include="scripts\Gallery\" />
     <Folder Include="scripts\Login\" />
+    <Folder Include="scripts\Factories\" />
     <Folder Include="scripts\Notifications\" />
     <Folder Include="styles\" />
     <Folder Include="views\" />
