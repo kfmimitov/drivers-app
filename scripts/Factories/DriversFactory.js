@@ -1,5 +1,5 @@
 ﻿(function () {
-    var driversFactory = function () {
+    var driversFactory = function ($http) {
         var el = new Everlive({
             apiKey: "EgXwDq7GEgueXESK",
             scheme: "https",
@@ -143,6 +143,20 @@
                  console.log(JSON.stringify(error));
              });
         }
+
+        var requestApology = function (apologyText, driverId) {
+
+            return $http.post('https://platform.telerik.com/bs-api/v1/EgXwDq7GEgueXESK/Functions/RequestApology',
+                { Apology: apologyText, DriverId: driverId }, 
+                { headers: { "Authorization": "Bearer " + localStorage.getItem('access-token') } }).then(function (data) {
+                  return data;
+                  },
+                  function (error) {
+
+                      console.log(JSON.stringify(error));
+                      return error;
+                  });
+        }
     
     return {
         getLatestDrivers: getLatestDrivers,
@@ -153,7 +167,8 @@
         data: data,
         uploadBase64File: uploadBase64File,
         getPhotoToUpload: getPhotoToUpload,
-        setPhotoToUpload: setPhotoToUpload
+        setPhotoToUpload: setPhotoToUpload,
+        requestApology : requestApology
     };
 }
 
