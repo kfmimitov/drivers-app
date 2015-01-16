@@ -25,6 +25,24 @@
     <Content Include=".debug.abproject" />
     <Content Include=".release.abproject" />
     <Content Include="App_Resources\iOS\config.xml" />
+    <Content Include="App_Resources\iOS\Default-667h.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="App_Resources\iOS\Default-736h.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="App_Resources\iOS\Default-Landscape-667h.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="App_Resources\iOS\Default-Landscape-736h.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="App_Resources\iOS\Icon-40%403x.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="App_Resources\iOS\Icon-60%403x.png">
+      <SubType>Content</SubType>
+    </Content>
     <Content Include="bower.json" />
     <Content Include="cordova.android.js" />
     <Content Include="cordova.ios.js" />

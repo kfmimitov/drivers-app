@@ -7,10 +7,13 @@
                     <img data-src="{{driver.Picture}}" class="resimgs driverPicture" />
                 </div>
             </div>
-            <div class="row">
-                <div class="col">
+            <div class="row" >
+                <div class="col" ng-hide="isOwner">
                     <button ng-hide="driver.HasApology" class="button button-calm button-block" ui-sref="tabs.appologize({incidentId : driver.Id})">Извини се</button>
                     <h4 ng-show="driver.HasApology">Шофьора се е извинил и oчаква одобрение. Браво!</h4>
+                </div>
+                <div class="col" ng-show="isOwner">
+                    <h4>Това е снимка качена от вас.</h4>
                 </div>
             </div>
         </ion-content>

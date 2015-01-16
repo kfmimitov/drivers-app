@@ -72,7 +72,13 @@
         }
 
         var getCurrentUser = function () {
-            return el.Users.currentUser();
+            return el.Users.currentUser()
+                .then(function (data) {
+                    return data;
+                },
+                function (error) {
+                    return error;
+                });
         }
          
         return {
