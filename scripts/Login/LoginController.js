@@ -20,6 +20,7 @@
             Users.loginWithFacebook(function (response) {
                 $state.go("tabs.gallery");
             }, function (error) {
+                showLoginError(error.code);
                 console.log(JSON.stringify(error));
             });
         }
@@ -37,7 +38,7 @@
 
                                                 }, function (error) {
                                                     
-                                                    showLoginError(error.Code);
+                                                    showLoginError(error.code);
                                                     console.log(JSON.stringify(error));
                                                     $scope.$apply();
                                                 });
