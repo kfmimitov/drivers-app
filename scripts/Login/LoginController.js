@@ -37,20 +37,7 @@
 
                                                 }, function (error) {
                                                     
-                                                    switch (error.code) {
-                                                        case 207:
-                                                            //wrong email
-                                                            navigator.notification.alert("Въведеният емайл е невалиден. Моля, използвайте въведете валиден емайл.");
-                                                            break;
-                                                        case 201:
-                                                            //existing username
-                                                            navigator.notification.alert("Въведеното потребителско име е вече регистрирано. Моля, използвайте друго потребителско име.");
-                                                            break;
-                                                        case 211:
-                                                            //existing email
-                                                            navigator.notification.alert("Въведеният емайл е вече регистриран. Моля, използвайте друг емайл.");
-                                                            break;
-                                                    }
+                                                    showLoginError(error.Code);
                                                     console.log(JSON.stringify(error));
                                                     $scope.$apply();
                                                 });
@@ -58,10 +45,32 @@
 
         $scope.loginWithEmail = function (existingUser) {
             Users.loginWithEmail(existingUser.Username, existingUser.Password, function (success) {
+                $scope.modalLogin.hide();
                 $state.go("tabs.gallery");
             }, function (error) {
-
+                showLoginError(error.code);
             });
+        }
+
+        function showLoginError(errorCode) {
+            switch (errorCode) {
+                case 207:
+                    //wrong email
+                    navigator.notification.alert("Въведеният емайл е невалиден. Моля, използвайте въведете валиден емайл.");
+                    break;
+                case 201:
+                    //existing username
+                    navigator.notification.alert("Въведеното потребителско име е вече регистрирано. Моля, използвайте друго потребителско име.");
+                    break;
+                case 205:
+                    //existing username
+                    navigator.notification.alert("Невалидно име или парола. Моля, опитайте отново.");
+                    break;
+                case 211:
+                    //existing email
+                    navigator.notification.alert("Въведеният емайл е вече регистриран. Моля, използвайте друг емайл.");
+                    break;
+            }
         }
 
         $ionicModal.fromTemplateUrl('views/Login/modal.register.html', {

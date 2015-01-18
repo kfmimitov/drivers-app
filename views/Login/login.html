@@ -1,26 +1,28 @@
-﻿<ion-content has-bouncing="false" class="splash">
-    <div class="loginWrapper">
-        <div class="row  row-top">
-            <div class="col">
-                <img class="logo" src="images/logo.png" />
+﻿<ion-view hide-nav-bar="true">
+    <ion-content has-bouncing="false" class="splash">
+        <div class="loginWrapper">
+            <div class="row  row-top">
+                <div class="col">
+                    <img class="logo" src="images/logo.png" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <h2 class="title">Гражданите</h2>
+                    <h4 class="subtitle">Снимай и покажи всеки "гражданин" на пътя.</h4>
+                </div>
+            </div>
+            <div class="row">
+                <button class="button button-light ion-social-facebook icon-left button-block" ng-click="registerWithFacebook()">Регистрация с Facebook</button>
+            </div>
+            <div class="row">
+                <button class="button button-light ion-email icon-left button-block" ng-click="modalRegister.show();">Регистрация с Email</button>
             </div>
         </div>
-        <div class="row">
-            <div class="col">
-                <h2 class="title">Гражданите</h2>
-                <h4 class="subtitle">Снимай и покажи всеки "гражданин" на пътя.</h4>
-            </div>
+    </ion-content>
+    <ion-footer-bar align-title="center" class="bar-light">
+        <div>
+            <h1 class="title" ng-click="modalLogin.show();">Вече имаш регистрация?</h1>
         </div>
-        <div class="row">
-            <button class="button button-light ion-social-facebook icon-left button-block" ng-click="registerWithFacebook()">Регистрация с Facebook</button>
-        </div>
-        <div class="row">
-            <button class="button button-light ion-email icon-left button-block" ng-click="modalRegister.show();">Регистрация с Email</button>
-        </div>
-    </div>
-</ion-content>
-<ion-footer-bar align-title="center" class="bar-light">
-    <div>
-        <h1 class="title" ng-click="modalLogin.show();">Вече имаш регистрация?</h1>
-    </div>
-</ion-footer-bar>
+    </ion-footer-bar>
+</ion-view>
