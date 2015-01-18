@@ -1,24 +1,24 @@
-﻿<ion-view title="Радар">
-    <ion-nav-buttons side="left">
-         <button class="button button-clear" ng-click="showDeleteButtonsClicked()" ng-show="subscribedLicenses.length > 0">Изтрий</button>
-        </ion-nav-buttons>
-        <ion-nav-buttons side="right">
-            <button class="button button-clear" ui-sref="tabs.trackLicense">Добави</button>
-        </ion-nav-buttons>
-        <ion-content has-bouncing="false">
-          <div class="infoText" ng-hide="subscribedLicenses.length > 0">
+﻿<ion-view view-title="Радар">
+    <ion-nav-buttons side="primary">
+        <button class="button button-clear" ng-click="showDeleteButtonsClicked()" ng-show="subscribedLicenses.length > 0">Изтрий</button>
+    </ion-nav-buttons>
+    <ion-nav-buttons side="secondary">
+        <button class="button button-clear" ui-sref="tabs.trackLicense">Добави</button>
+    </ion-nav-buttons>
+    <ion-content has-bouncing="false">
+        <div class="infoText" ng-hide="subscribedLicenses.length > 0">
             <span>Можеш да получиш push нотификации когато определени от теб регистрационни номера са снимани в нарушение. Започни като добавиш <strong>твоя номер</strong>!</span>
-          </div>
-             <ion-list show-delete="showDeleteButtons"
-                      can-swipe="true">
-              <ion-item ng-repeat="license in subscribedLicenses">
+        </div>
+        <ion-list show-delete="showDeleteButtons"
+                  can-swipe="true">
+            <ion-item ng-repeat="license in subscribedLicenses">
 
                 <h2>{{license}}</h2>
 
                 <ion-delete-button class="ion-minus-circled"
                                    ng-click="removeLicense($index)">
                 </ion-delete-button>
-              </ion-item>
-            </ion-list>
-        </ion-content>
+            </ion-item>
+        </ion-list>
+    </ion-content>
 </ion-view>

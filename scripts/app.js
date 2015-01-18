@@ -13,10 +13,10 @@ app.run(function ($ionicPlatform) {
         }
 
         // override a few defaults of the native transitions plugin
-        window.plugins.nativepagetransitions.globalOptions.duration = 500;
+        //window.plugins.nativepagetransitions.globalOptions.duration = 500;
         //window.plugins.nativepagetransitions.globalOptions.slowdownfactor = 10;
-        window.plugins.nativepagetransitions.globalOptions.fixedPixelsTop = 64;
-        window.plugins.nativepagetransitions.globalOptions.fixedPixelsBottom = 48;
+        //window.plugins.nativepagetransitions.globalOptions.fixedPixelsTop = 64;
+        //window.plugins.nativepagetransitions.globalOptions.fixedPixelsBottom = 48;
     });
 });
 

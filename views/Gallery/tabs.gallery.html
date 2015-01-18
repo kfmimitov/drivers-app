@@ -1,62 +1,60 @@
-﻿<ion-view title="Гражданите" hide-back-button="false">
-        <ion-nav-buttons side="left">
-         <button class="button button-clear" ng-click="setFilter()" ng-hide="isSearching">{{filterState}}</button>
-        </ion-nav-buttons>
-        <ion-nav-buttons side="right">
-            <button class="button button-clear" ng-click="setSearch()" ng-hide="isFiltering">{{searchState}}</button>
-        </ion-nav-buttons>
-        <ion-content has-bouncing="false">
-             <ion-refresher
-                pulling-text="Зареждане на нови ..."
-                on-refresh="onRefresh()">
-              </ion-refresher>
-            <div class="item-input-inset searchBox" ng-show="isSearching">
-                <label class="item-input-wrapper">
-                    <i class="icon ion-ios7-search placeholder-icon"></i>
-                    <input type="search" placeholder="Регистрационен номер (EN)" ng-model="searchingValue" class="LicensePlate">
-                </label>
-                <button class="button button-clear" ng-click="searchDriver(searchingValue);">Търси</button>
-            </div>
-            <div ng-show="isFiltering">
-                <div class="item-input-wrapper">
+﻿<ion-view view-title="Гражданите" hide-back-button="false">
+    <ion-nav-buttons side="primary">
+        <button class="button button-clear" ng-click="setFilter()" ng-hide="isSearching">{{filterState}}</button>
+    </ion-nav-buttons>
+    <ion-nav-buttons side="secondary">
+        <button class="button button-clear" ng-click="setSearch()" ng-hide="isFiltering">{{searchState}}</button>
+    </ion-nav-buttons>
+    <ion-content has-bouncing="false">
+        <ion-refresher pulling-text="Зареждане на нови ..."
+                       on-refresh="onRefresh()">
+        </ion-refresher>
+        <div class="item-input-inset searchBox" ng-show="isSearching">
+            <label class="item-input-wrapper">
+                <i class="icon ion-ios7-search placeholder-icon"></i>
+                <input type="search" placeholder="Регистрационен номер (EN)" ng-model="searchingValue" class="LicensePlate">
+            </label>
+            <button class="button button-clear" ng-click="searchDriver(searchingValue);">Търси</button>
+        </div>
+        <div ng-show="isFiltering">
+            <div class="item-input-wrapper">
                 <div class="button-bar item-input-inset">
                     <button class="button button-small" ng-class="{'button-positive': isActiveFilter('latest')}" ng-click="setActiveFilter('latest')">Най-нови</button>
                     <button class="button button-small" ng-class="{'button-positive': isActiveFilter('top')}" ng-click="setActiveFilter('top')">Най-гледани</button>
                 </div>
-                </div>
             </div>
-            <div class="card" ng-show="loadedDrivers.length == 0">
-                <div class="item item-text-wrap">
-                    Няма намерени резултатите за регистрационен номер <strong>{{licensePlateSearch}}</strong>.
-                </div>
+        </div>
+        <div class="card" ng-show="loadedDrivers.length == 0">
+            <div class="item item-text-wrap">
+                Няма намерени резултатите за регистрационен номер <strong>{{licensePlateSearch}}</strong>.
             </div>
-            <ion-list>
-                <a ng-repeat="driver in loadedDrivers"
-                          href="#/tabs/incidents/{{driver.Id}}"
-                          class="item item-image imageGallery" type="item-text-wrap">
-                    <div class="row imageHeader">
-                        <div class="col itemElementLeft">
-                            <h2>{{driver.LicensePlate}} </h2>
-                        </div>
-                        <div class="itemElementRight">
-                            <i class="icon ion-eye"></i> {{driver.ViewCounter}}
-                        </div>
-                        <div class="itemElementRight">
-                            <i class="icon ion-clock"></i> {{driver.CreatedAt | date : "longDate"}}
-                        </div>
+        </div>
+        <ion-list>
+            <a ng-repeat="driver in loadedDrivers"
+               href="#/tabs/incidents/{{driver.Id}}"
+               class="item item-image imageGallery" type="item-text-wrap">
+                <div class="row imageHeader">
+                    <div class="col itemElementLeft">
+                        <h2>{{driver.LicensePlate}} </h2>
                     </div>
-                    <div class="imagePreview">
-                        <img data-src="{{driver.Picture}}" class="resimgs" />
+                    <div class="itemElementRight">
+                        <i class="icon ion-eye"></i> {{driver.ViewCounter}}
                     </div>
-                    <div class="row imageFooter">
-                        <h3 class="">{{driver.Title}}</h3>
+                    <div class="itemElementRight">
+                        <i class="icon ion-clock"></i> {{driver.CreatedAt | date : "longDate"}}
                     </div>
-                </a>
-            </ion-list>
-            <ion-infinite-scroll
-                ng-if="hasMoreToLoad"
-                on-infinite="loadMoreDrivers()"
-                distance="1%">
-              </ion-infinite-scroll>
-        </ion-content>
+                </div>
+                <div class="imagePreview">
+                    <img data-src="{{driver.Picture}}" class="resimgs" />
+                </div>
+                <div class="row imageFooter">
+                    <h3 class="">{{driver.Title}}</h3>
+                </div>
+            </a>
+        </ion-list>
+        <ion-infinite-scroll ng-if="hasMoreToLoad"
+                             on-infinite="loadMoreDrivers()"
+                             distance="1%">
+        </ion-infinite-scroll>
+    </ion-content>
 </ion-view>

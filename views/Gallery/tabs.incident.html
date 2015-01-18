@@ -1,4 +1,7 @@
-﻿<ion-view title="{{driver.LicensePlate}}">
+﻿<ion-view>
+    <ion-nav-title>
+        {{driver.LicensePlate}}
+    </ion-nav-title>
     <ion-content class="padding" has-bouncing="false">
         <h3>{{driver.Title}}</h3>
         <label>{{driver.CreatedAt | date : "fullDate"}}</label>

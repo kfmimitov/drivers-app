@@ -1,18 +1,19 @@
-﻿<ion-view title="Регистрационен номер">
-        <ion-content has-bouncing="false"  class="padding">
-         <form name="newLicenseTracking">
-                <div class="uploadTwo">
-                        <small class="error">Регистрационен номер</small>
-                        <strong>(EN):</strong>
-                        <small class="error" ng-hide="isValidLicense">Въвeдете валиден регистрационен номер на латински:
-                        </small>
-                    <input class="LicensePlate" placeholder="CA0000HT" ng-model="licensePlate" type="text" required name="license" />
-                </div>
-                <div class="uploadFour">
-                        <button class="button button-calm button-block" id="btnSelectPhoto" ng-click="onSaveLicense(licensePlate);">
-                        Следи за нови снимки
-                    </button>
-                </div>
-            </form>
-        </ion-content>
+﻿<ion-view view-title="Регистрационен номер">
+    <ion-content has-bouncing="false" class="padding">
+        <form name="newLicenseTracking">
+            <div class="uploadTwo">
+                <small class="error">Регистрационен номер</small>
+                <strong>(EN):</strong>
+                <small class="error" ng-hide="isValidLicense">
+                    Въвeдете валиден регистрационен номер на латински:
+                </small>
+                <input class="LicensePlate" placeholder="CA0000HT" ng-model="licensePlate" type="text" required name="license" />
+            </div>
+            <div class="uploadFour">
+                <button class="button button-calm button-block" id="btnSelectPhoto" ng-click="onSaveLicense(licensePlate);">
+                    Следи за нови снимки
+                </button>
+            </div>
+        </form>
+    </ion-content>
 </ion-view>

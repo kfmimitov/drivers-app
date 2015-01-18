@@ -1,29 +1,31 @@
-﻿<ion-view title="Снимка" hide-back-button="true">
+﻿<ion-view view-title="Снимка" hide-back-button="true">
     <ion-nav-buttons side="left">
-         <button class="button button-clear" ng-click="onCancelUpload()">Откажи</button>
-        </ion-nav-buttons>
-        <ion-content class="padding" has-bouncing="false">  
+        <button class="button button-clear" ng-click="onCancelUpload()">Откажи</button>
+    </ion-nav-buttons>
+    <ion-content class="padding" has-bouncing="false">
 
-            <form name="newEntryForm">
-                <div class="uploadOne">
-                    <img ng-src="{{selectedPicture}}" class="driverPicture" />
-                </div>
-                <div class="uploadTwo">
-                        <small class="error">Регистрационен номер</small>
-                        <strong>(EN):</strong>
-                    <input class="LicensePlate" placeholder="CA0000HT" ng-model="newDriver.LicensePlate" type="text" required name="license" />
-                </div>
-                <div class="uploadThree">
-                     <small class="error" ng-show="newEntryForm.title.$error.maxlength">
-                         Послание е по-дълго от 100 символа:</small>
-                     <small class="error">
-                         Послание до 100 символa:</small>
-                    <textarea placeholder="Бързай бавно..." ng-model="newDriver.Title" required ng-maxlength="100" name="title"></textarea>
-                </div>
-                <div class="uploadFour">
-                        <input ng-model="reportKat" type="checkbox">Изпрати до КАТ (само при неправилно паркиране)</input>
-                        <button class="button button-calm button-block" id="btnSelectPhoto" ng-click="onSavePhoto(newDriver, reportKat);">Дай му "гражданство"</button>
-                </div>
-            </form>
-        </ion-content>
+        <form name="newEntryForm">
+            <div class="uploadOne">
+                <img ng-src="{{selectedPicture}}" class="driverPicture" />
+            </div>
+            <div class="uploadTwo">
+                <small class="error">Регистрационен номер</small>
+                <strong>(EN):</strong>
+                <input class="LicensePlate" placeholder="CA0000HT" ng-model="newDriver.LicensePlate" type="text" required name="license" />
+            </div>
+            <div class="uploadThree">
+                <small class="error" ng-show="newEntryForm.title.$error.maxlength">
+                    Послание е по-дълго от 100 символа:
+                </small>
+                <small class="error">
+                    Послание до 100 символa:
+                </small>
+                <textarea placeholder="Бързай бавно..." ng-model="newDriver.Title" required ng-maxlength="100" name="title"></textarea>
+            </div>
+            <div class="uploadFour">
+                <input ng-model="reportKat" type="checkbox">Изпрати до КАТ (само при неправилно паркиране)</input>
+                <button class="button button-calm button-block" id="btnSelectPhoto" ng-click="onSavePhoto(newDriver, reportKat);">Дай му "гражданство"</button>
+            </div>
+        </form>
+    </ion-content>
 </ion-view>

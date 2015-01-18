@@ -2,7 +2,6 @@
 
     var galleryController = function ($scope, Drivers, $state) {
 
-
         var ITEMS_TO_FETCH = 5;
         $scope.isFiltering = false;
         $scope.isSearching = false;
@@ -10,13 +9,13 @@
         $scope.filterState = "Филтър";
         $scope.activeFilter = 'latest';
 
-        function initializeView() {
-            $scope.loadedItemsCount = ITEMS_TO_FETCH;
-            $scope.hasMoreToLoad = true;
-            $scope.searchingValue = "";
+         $scope.$on('$ionicView.loaded', function () {
+             $scope.loadedItemsCount = ITEMS_TO_FETCH;
+             $scope.hasMoreToLoad = true;
+             $scope.searchingValue = "";
 
-            loadLatestDrivers();
-        }
+             loadLatestDrivers();
+        });
 
         $scope.onRefresh = function () {
             if ($scope.activeFilter === "latest") {
@@ -118,10 +117,8 @@
                 $scope.$broadcast('scroll.refreshComplete');
             });
         }
-
-        initializeView();
     }
 
     var app = angular.module("Rednecks");
-    app.controller("GalleryController", ["$scope", "Drivers", "$state", galleryController]);
+    app.controller("GalleryController", ["$scope", "Drivers", "$state",  galleryController]);
 })();
