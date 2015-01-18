@@ -24,6 +24,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
 
     $stateProvider
       .state('login', {
+          cache: false,
           url: "/login",
           controller: "LoginController",
           templateUrl: "views/Login/login.html"
@@ -52,6 +53,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
           }
       })
     .state('tabs.upload-camera', {
+        cache: false,
         url: "/upload-camera",
         views: {
             'camera-tab': {
@@ -61,6 +63,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
         }
     })
      .state('tabs.upload-album', {
+         cache: false,
          url: "/upload-album",
          views: {
              'album-tab': {

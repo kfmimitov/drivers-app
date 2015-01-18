@@ -21,7 +21,6 @@
                 $state.go("tabs.gallery");
             }, function (error) {
                 showLoginError(error.code);
-                console.log(JSON.stringify(error));
             });
         }
 
@@ -32,15 +31,10 @@
                                                 newUser.Email,
                                                 newUser.Password,
                                                 function (success) {
-
                                                     $scope.modalRegister.hide();
                                                     $state.go("tabs.gallery");
-
                                                 }, function (error) {
-                                                    
                                                     showLoginError(error.code);
-                                                    console.log(JSON.stringify(error));
-                                                    $scope.$apply();
                                                 });
         }
 

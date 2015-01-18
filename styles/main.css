@@ -11,7 +11,7 @@ body, textarea, select {
     font-size: 15pt;
 }
 
-input, input[type="text"], input[type="password"], input[type="email"], input[type="tel"]  {
+input, input[type="text"], input[type="password"], input[type="email"], input[type="tel"] {
     font-family: 'Open Sans', sans-serif;
     font-weight: 300;
     color: #52575c;
@@ -70,7 +70,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .driverPicture {
-        width: 100%;
+    width: 100%;
 }
 
 .uploadTwo {
@@ -82,6 +82,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .uploadFour {
+    margin-bottom: 10px;
 }
 
 .searchBox {
@@ -93,40 +94,42 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .viewCounter {
-    text-align:right;
+    text-align: right;
 }
 
-.imageGallery{
-    margin:5px;
+.imageGallery {
+    margin: 5px;
 }
+
     .imageGallery h2 {
         font-weight: bold;
     }
+
     .imageGallery h3 {
         font-weight: bold;
     }
 
 .imageHeader {
     background: rgba(255,255,255,0.75);
-    position:absolute;
-    top:-1px;
-    height:28px;
+    position: absolute;
+    top: -1px;
+    height: 28px;
 }
 
-.imageHeader h2{
-    color:black;
-}
+    .imageHeader h2 {
+        color: black;
+    }
 
 .imageFooter {
     background: rgba(255,255,255,0.75);
-    position:absolute;
-    bottom:-1px;
+    position: absolute;
+    bottom: -1px;
 }
 
-.imageFooter h3 {
-   white-space:pre-wrap;
-   text-align:left;
-}
+    .imageFooter h3 {
+        white-space: pre-wrap;
+        text-align: left;
+    }
 
 .imagePreview {
     min-height: 210px;
@@ -134,14 +137,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .itemElementLeft {
-    text-align:start;
-    padding:0;
+    text-align: start;
+    padding: 0;
 }
 
 .itemElementRight {
-    margin-top:-8px;
-    margin-right:10px;
-    font-size:14px;
+    margin-top: -8px;
+    margin-right: 10px;
+    font-size: 14px;
 }
 
 .LicensePlate {
@@ -149,11 +152,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 input::-webkit-input-placeholder {
-  text-transform: none;
+    text-transform: none;
 }
 
-.tab-item.tab-item-active{
-    color: #55acee; 
+.tab-item.tab-item-active {
+    color: #55acee;
 }
 
 .tab-item {
@@ -163,24 +166,24 @@ input::-webkit-input-placeholder {
 }
 
 .bar.bar-calm .title {
-color: white;
-font-weight: 500;
+    color: white;
+    font-weight: 500;
 }
 
 .bar.bar-calm {
-border-color: #1A88EE;
-background-color: #1A88EE;
-background-image: linear-gradient(0deg, #1aacc3, #1aacc3 50%, transparent 50%);
-color: #1A88EE;
+    border-color: #1A88EE;
+    background-color: #1A88EE;
+    background-image: linear-gradient(0deg, #1aacc3, #1aacc3 50%, transparent 50%);
+    color: #1A88EE;
 }
 
-.infoText{
+.infoText {
     text-align: center;
-    margin:20px 5px 0 5px;
+    margin: 20px 5px 0 5px;
 }
 
 .loginWrapper {
-    text-align:center;
+    text-align: center;
     /*position: relative;
     width:100%;
     bottom: 50px;*/
@@ -196,17 +199,59 @@ color: #1A88EE;
         color: white;
         font-weight: 500;
     }
+
     .splash .subtitle {
         color: white;
     }
 
     .splash .row-top {
-        margin-top:60px;
+        margin-top: 60px;
     }
-.splash .logo{
-    width:160px;
-}
+
+    .splash .logo {
+        width: 160px;
+    }
 
 .registrationForm small {
-    color:white;
+    color: white;
+}
+
+.ion-input-select,
+select {
+    -webkit-appearance: none;
+    background-repeat: no-repeat;
+    background-color: rgba(0,0,0,0);
+    border: #dddddd;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 500;
+    color: black;
+    font-size: 15pt;
+    display: inline;
+    vertical-align: middle;
+    padding: auto 0;
+    overflow: hidden;
+}
+
+.ion-input-select {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    color: #52575c;
+    line-height: 1.75em;
+    font-size: 14pt;
+}
+
+option {
+    background: #444;
+}
+
+select::-ms-expand {
+    display: none;
+}
+
+:focus {
+    outline: none;
+}
+
+.no-padding{
+    padding:0;
 }

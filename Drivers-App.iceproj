@@ -852,6 +852,7 @@
     <Content Include="Plugins\FacebookConnect\www\js\index.js" />
     <Content Include="Plugins\FacebookConnect\www\phonegap\plugin\facebookConnectPlugin\facebookConnectPlugin.js" />
     <Content Include="scripts\app.js" />
+    <Content Include="scripts\Factories\GamificationFactory.js" />
     <Content Include="scripts\Gallery\GalleryController.js" />
     <Content Include="scripts\Factories\DriversFactory.js" />
     <Content Include="scripts\Home\AlbumController.js">

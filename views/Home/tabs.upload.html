@@ -23,7 +23,21 @@
                 <textarea placeholder="Бързай бавно..." ng-model="newDriver.Title" required ng-maxlength="100" name="title"></textarea>
             </div>
             <div class="uploadFour">
-                <input ng-model="reportKat" type="checkbox">Изпрати до КАТ (само при неправилно паркиране)</input>
+                <small>
+                    Избери нарушения:
+                </small>
+                <select multiple="multiple" ng-model="newDriver.SelectedTags" class="ion-input-select" ng-options="tag.Name for tag in tagsCloud">
+                </select>
+            </div>
+            <div>
+                <div class="row no-padding" ng-show="canSendReportToKat">
+                    <div class="col col-10 no-padding">
+                        <input ng-model="reportKat" type="checkbox"></input>
+                    </div>
+                    <div class="col col-90 no-padding">
+                        <small>При неправилно паркиране може да изпрати сигнал до КАТ</small>
+                    </div>
+                </div>
                 <button class="button button-calm button-block" id="btnSelectPhoto" ng-click="onSavePhoto(newDriver, reportKat);">Дай му "гражданство"</button>
             </div>
         </form>
