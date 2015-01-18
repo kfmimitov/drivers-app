@@ -1,4 +1,24 @@
-var app = angular.module("Rednecks", ["ionic", "ngRoute"]);
+var app = angular.module("Rednecks", ["ionic"]);
+
+app.run(function ($ionicPlatform) {
+    $ionicPlatform.ready(function () {
+        // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
+        // for form inputs)
+       // if (window.cordova && window.cordova.plugins.Keyboard) {
+         //   cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
+        //}
+        if (window.StatusBar) {
+            // org.apache.cordova.statusbar required
+            StatusBar.styleDefault();
+        }
+
+        // override a few defaults of the native transitions plugin
+        window.plugins.nativepagetransitions.globalOptions.duration = 2000;
+        window.plugins.nativepagetransitions.globalOptions.slowdownfactor = 10;
+        window.plugins.nativepagetransitions.globalOptions.fixedPixelsTop = 64;
+        window.plugins.nativepagetransitions.globalOptions.fixedPixelsBottom = 48;
+    });
+});
 
 app.config(function ($stateProvider, $urlRouterProvider) {
 
@@ -9,7 +29,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
           templateUrl: "views/Login/login.html"
       })
       .state('tabs', {
-          url: "/tab",
+          url: "/tabs",
           abstract: true,
           templateUrl: "views/tabs.html"
       })

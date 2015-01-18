@@ -30,10 +30,10 @@
                     Няма намерени резултатите за регистрационен номер <strong>{{licensePlateSearch}}</strong>.
                 </div>
             </div>
-            <div class="list">
+            <ion-list>
                 <a ng-repeat="driver in loadedDrivers"
-                    ui-sref="tabs.incident({incidentId : driver.Id})"
-                    class="item item-image imageGallery">
+                          href="#/tabs/incidents/{{driver.Id}}"
+                          class="item item-image imageGallery" type="item-text-wrap">
                     <div class="row imageHeader">
                         <div class="col itemElementLeft">
                             <h2>{{driver.LicensePlate}} </h2>
@@ -52,7 +52,7 @@
                         <h3 class="">{{driver.Title}}</h3>
                     </div>
                 </a>
-            </div>
+            </ion-list>
             <ion-infinite-scroll
                 ng-if="hasMoreToLoad"
                 on-infinite="loadMoreDrivers()"

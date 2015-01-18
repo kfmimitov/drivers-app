@@ -10,12 +10,11 @@
     <script src="cordova.js"></script>
     <script src="http://bs-static.cdn.telerik.com/1.0.0/everlive.images.min.js"></script>
 
-    <!-- Release configuration -->
     <script src="js/ionic.bundle.min.js"></script>
-    <script src="js/angular-route.min.js"></script>
     <script src="js/angular-locale_bg-bg.js"></script>
     <script src="js/everlive.all.min.js"></script>
-
+    <script src="js/native-transitions.js"></script>
+    
     <script src="scripts/app.js"></script>
     <script src="scripts/Factories/DriversFactory.js"></script>
     <script src="scripts/Factories/UsersFactory.js"></script>
@@ -29,11 +28,12 @@
     <script src="scripts/Notifications/NotificationsController.js"></script>
 
 </head>
-<body class="homepage">
+<body class="homepage" animation="slide-left-right" class="platform-ios platform-cordova platform-webview">
 
     <ion-nav-bar class="nav-title-slide-ios7 bar-calm">
-          <ion-nav-back-button class="button-clear ion-arrow-left-c">Назад
-          </ion-nav-back-button>
+        <ion-nav-back-button class="button-clear ion-arrow-left-c">
+            Назад
+        </ion-nav-back-button>
     </ion-nav-bar>
 
     <ion-nav-view animation="slide-left-right"></ion-nav-view>

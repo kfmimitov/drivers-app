@@ -78,9 +78,9 @@
     <Content Include="js\angular-locale_bg-bg.js">
       <SubType>Content</SubType>
     </Content>
-    <Content Include="js\angular-route.min.js" />
     <Content Include="js\everlive.all.min.js" />
     <Content Include="js\ionic.bundle.min.js" />
+    <Content Include="js\native-transitions.js" />
     <Content Include="Plugins\FacebookConnect\.gitignore">
       <SubType>Content</SubType>
     </Content>
