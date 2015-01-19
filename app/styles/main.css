@@ -1,4 +1,4 @@
-﻿@charset 'UTF-8';
+@charset 'UTF-8';
 @import url("font-awesome.min.css");
 @import url("http://fonts.googleapis.com/css?family=Open+Sans:400italic,300,700,400,600&subset=latin,cyrillic-ext");
 
@@ -12,6 +12,7 @@ body, textarea, select {
 }
 
 input, input[type="text"], input[type="password"], input[type="email"], input[type="tel"] {
+   /* dfsdfs*/
     font-family: 'Open Sans', sans-serif;
     font-weight: 300;
     color: #52575c;
